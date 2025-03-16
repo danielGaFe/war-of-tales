@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=4 uid="uid://bx1evhelgh8jx"]
+
+[ext_resource type="PackedScene" uid="uid://bjp0fkdsc5kun" path="res://escenas/Player/Player.tscn" id="1_e1sbd"]
+[ext_resource type="Texture2D" uid="uid://6xysovo23gpd" path="res://assets/tiles/provisional.png" id="2_2eosf"]
+[ext_resource type="Script" path="res://Scripts/camaraN1.gd" id="3_amyhw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x2nd2"]
+texture = ExtResource("2_2eosf")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_56oc1"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_x2nd2")
+
+[sub_resource type="Curve2D" id="Curve2D_pub3v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 342, -35, 0, 0, 0, 0, 644, -113, 0, 0, 0, 0, 874, -196, 0, 0, 0, 0, 954, -125, 0, 0, 0, 0, 1083, -145, 0, 0, 0, 0, 1403, -105)
+}
+point_count = 6
+
+[node name="NIVEL1" type="Node2D"]
+position = Vector2(880, 756)
+
+[node name="TilemapLayers" type="Node2D" parent="."]
+
+[node name="Fondo" type="TileMapLayer" parent="TilemapLayers"]
+
+[node name="Entorno" type="TileMapLayer" parent="TilemapLayers"]
+tile_map_data = PackedByteArray("AAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAD3/wAAAAAAAAAAAAD2/wAAAAAAAAAAAAD1/wAAAAAAAAAAAAD0/wAAAAAAAAAAAADz/wAAAAAAAAAAAADy/wAAAAAAAAAAAAAQAAAAAAAAAAAAAADy/wEAAAAAAAEAAADz/wEAAAAAAAEAAAD0/wEAAAAAAAEAAAD1/wEAAAAAAAEAAAD2/wEAAAAAAAEAAAD3/wEAAAAAAAEAAAD4/wEAAAAAAAEAAAD5/wEAAAAAAAEAAAD6/wEAAAAAAAEAAAD7/wEAAAAAAAEAAAD8/wEAAAAAAAEAAAD9/wEAAAAAAAEAAAD+/wEAAAAAAAEAAAD//wEAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAADAAEAAAAAAAEAAAAEAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAAAAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAAAAAEAAAAKAAEAAAAAAAEAAAALAAEAAAAAAAEAAAAMAAEAAAAAAAEAAAANAAEAAAAAAAEAAAAOAAEAAAAAAAEAAAAPAAEAAAAAAAEAAAAQAAEAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_56oc1")
+
+[node name="Player_Idle" parent="." instance=ExtResource("1_e1sbd")]
+position = Vector2(-556, -358)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-3, 6)
+curve = SubResource("Curve2D_pub3v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(342, -35)
+rotation = -0.252755
+script = ExtResource("3_amyhw")
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-9.53674e-07, -2.38419e-07)

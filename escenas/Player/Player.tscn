@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjp0fkdsc5kun"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ahlrm"]
+[ext_resource type="Texture2D" uid="uid://c6cf37p8oqmao" path="res://assets/sprites/idle-Sheet.png" id="1_bmvhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktjrv"]
+size = Vector2(83, 121)
+
+[sub_resource type="Animation" id="Animation_1ygnf"]
+resource_name = "IDLE"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle-sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ap6on"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle-sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhl32"]
+_data = {
+"IDLE": SubResource("Animation_1ygnf"),
+"RESET": SubResource("Animation_ap6on")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ahlrm")
+
+[node name="Idle-sprite" type="Sprite2D" parent="."]
+position = Vector2(608, 296)
+texture = ExtResource("1_bmvhn")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(611.5, 298.5)
+shape = SubResource("RectangleShape2D_ktjrv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qhl32")
+}
