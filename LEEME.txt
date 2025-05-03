@@ -1,0 +1,18 @@
+Versión de Godot empleada: 4.3
+Descarga desde el siguiente enlace: 
+https://godotengine.org/download/archive/4.3-stable/
+
+
+////////////////////////////////////////////
+Para importar el proyecto:
+1) Descargar desde GitHub el proyecto.
+2) Abrir Godot 4.3
+3) Pulsar en Import
+4) Seleccionar la carpeta dónde está el proyecto descargado previamente.
+
+
+///////////////////////////////////////////
+Para que la ejecución del proyecto funcione correctamente dentro de Godot hay que ir al menú superior:
+1) Proyect > Project Settings
+2) Globals > Autoload
+3) Añadir el script SenalGlobal.gd ubicado en la carpeta Scripts
