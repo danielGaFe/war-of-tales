@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj3xn4fqvpq01"]
+
+[ext_resource type="Script" path="res://Scripts/presentacion_lv_1.gd" id="1_2qqw3"]
+[ext_resource type="Texture2D" uid="uid://chipoferporhl" path="res://assets/sprites/presentaciones/lv1.png" id="1_y8xkr"]
+
+[sub_resource type="Animation" id="Animation_ehe4i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6di0u"]
+resource_name = "lv1"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtyyx"]
+_data = {
+"RESET": SubResource("Animation_ehe4i"),
+"lv1": SubResource("Animation_6di0u")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2qqw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(963.556, 541)
+scale = Vector2(0.998148, 0.998148)
+texture = ExtResource("1_y8xkr")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rtyyx")
+}
+speed_scale = 0.063
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true

@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6pfy50hkcli4"]
+
+[ext_resource type="Script" path="res://Scripts/marcadorAnimacion.gd" id="1_cs4h8"]
+[ext_resource type="Texture2D" uid="uid://c64i07ukwvv02" path="res://assets/marcador/fondoMarcador.png" id="1_gh4ie"]
+[ext_resource type="Texture2D" uid="uid://dkd0slprv8uvd" path="res://assets/marcador/vidas.png" id="1_p3qk6"]
+
+[sub_resource type="Animation" id="Animation_t3axl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_5chk7"]
+resource_name = "vidas"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.5, 2.5), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8qbl"]
+_data = {
+"RESET": SubResource("Animation_t3axl"),
+"vidas": SubResource("Animation_5chk7")
+}
+
+[node name="Node2D" type="CanvasLayer"]
+script = ExtResource("1_cs4h8")
+
+[node name="vida" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(79, 201)
+rotation = -0.137213
+scale = Vector2(2, 2)
+texture = ExtResource("1_p3qk6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.737193, 0.737193, 0.737193, 1)
+z_index = 1
+position = Vector2(233.423, 192.902)
+rotation = -0.0954892
+scale = Vector2(2.77556, 2.35366)
+texture = ExtResource("1_gh4ie")
+
+[node name="AnimaVida" type="AnimationPlayer" parent="."]
+root_node = NodePath("../vida")
+libraries = {
+"": SubResource("AnimationLibrary_x8qbl")
+}

@@ -1,6 +1,13 @@
-extends PathFollow2D
+extends PathFollow2D #Clase de tipo PathFollow2D
 
-@export var speed: float = 100  # Velocidad de la cámara
+@export var velocidad: float = 20 # Velocidad a la que se mueve el nodo a lo largo del camino
+@export var velocidadLluvia: float = 200.0 # Velocidad adicional, para simular el movimiento de la lluvia
+var longitudTotal := 0.0 #Almacena la longitud total del camino a recorrer
+
+func _ready():
+	longitudTotal = get_parent().curve.get_baked_length()# Al iniciarse, se obtiene y se guarda la longitud del camino desde el nodo padre Path2D
 
 func _process(delta):
-	progress += speed * delta  # Mueve la cámara a lo largo del camino
+	var distancia = velocidad * delta # Calcula la distancia a recorrer en cada frame según la velocidad y el tiempo transcurrido
+	progress_ratio += distancia / longitudTotal # Aumenta su progreso durante el transcurso del camino, usando una proporción (de 0 a 1) basada en la longitud total
+	var longitudCamino = get_parent().curve.get_baked_length() # Vuelve a obtener la longitud del camino

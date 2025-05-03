@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c42f48hil3ihd"]
+
+[ext_resource type="Script" path="res://Scripts/vidas.gd" id="1_d8vrm"]
+[ext_resource type="FontFile" uid="uid://dob7ob11ornpn" path="res://assets/fuente/SchoolBookNew-Regular.ttf" id="2_ennkk"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_d8vrm")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+offset_left = 60.0
+offset_top = 234.0
+offset_right = 138.0
+offset_bottom = 298.0
+localize_numeral_system = false
+theme_override_colors/font_color = Color(0.89093, 0.899678, 0.872096, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("2_ennkk")
+theme_override_font_sizes/font_size = 63
+horizontal_alignment = 1
+vertical_alignment = 1

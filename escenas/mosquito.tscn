@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://2sp2lo2p338y"]
+
+[ext_resource type="Script" path="res://Scripts/mosquito.gd" id="1_68h4k"]
+[ext_resource type="Texture2D" uid="uid://bnku76to8d5s6" path="res://assets/sprites/mosquito.png" id="2_vtttw"]
+[ext_resource type="Texture2D" uid="uid://notae6rki4un" path="res://assets/sprites/items/90puntos.png" id="3_3sy0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26r5o"]
+size = Vector2(40, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxr4d"]
+atlas = ExtResource("2_vtttw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itght"]
+atlas = ExtResource("2_vtttw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5maio"]
+atlas = ExtResource("3_3sy0w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4odv"]
+atlas = ExtResource("3_3sy0w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwrkh"]
+atlas = ExtResource("3_3sy0w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yc075"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxr4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itght")
+}],
+"loop": true,
+"name": &"mosquito",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5maio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4odv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwrkh")
+}],
+"loop": true,
+"name": &"puntos",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="CharacterBody2D" groups=["Enemigos"]]
+script = ExtResource("1_68h4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 2.5)
+shape = SubResource("RectangleShape2D_26r5o")
+
+[node name="mosquito" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.6875, 1.6875)
+sprite_frames = SubResource("SpriteFrames_yc075")
+animation = &"mosquito"

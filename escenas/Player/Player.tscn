@@ -1,62 +1,208 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjp0fkdsc5kun"]
+[gd_scene load_steps=29 format=3 uid="uid://bjp0fkdsc5kun"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ahlrm"]
-[ext_resource type="Texture2D" uid="uid://c6cf37p8oqmao" path="res://assets/sprites/idle-Sheet.png" id="1_bmvhn"]
+[ext_resource type="Texture2D" uid="uid://cfnodfs7nbavs" path="res://assets/sprites/PersonajePrincipal/mago_caminando_fuego.png" id="2_olh0o"]
+[ext_resource type="Texture2D" uid="uid://3qcnjuptiqpe" path="res://assets/sprites/PersonajePrincipal/mago_caminando_normal.png" id="3_1cpeg"]
+[ext_resource type="Texture2D" uid="uid://brlx2v117hl06" path="res://assets/sprites/PersonajePrincipal/mago_caminando_tierra.png" id="4_y5ykp"]
+[ext_resource type="Texture2D" uid="uid://m4yuxdwchs2b" path="res://assets/sprites/PersonajePrincipal/idle_fuego.png" id="5_1d5g5"]
+[ext_resource type="Texture2D" uid="uid://iklst7td27qy" path="res://assets/sprites/PersonajePrincipal/mago_idle.png" id="5_ng2o0"]
+[ext_resource type="Texture2D" uid="uid://dt1wiba3dlxo2" path="res://assets/sprites/PersonajePrincipal/idle_tierra.png" id="6_d7m11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktjrv"]
-size = Vector2(83, 121)
+size = Vector2(47.25, 25.905)
 
-[sub_resource type="Animation" id="Animation_1ygnf"]
-resource_name = "IDLE"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Idle-sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ggcp"]
+atlas = ExtResource("2_olh0o")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="Animation" id="Animation_ap6on"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Idle-sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8c67"]
+atlas = ExtResource("2_olh0o")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhl32"]
-_data = {
-"IDLE": SubResource("Animation_1ygnf"),
-"RESET": SubResource("Animation_ap6on")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_mte73"]
+atlas = ExtResource("2_olh0o")
+region = Rect2(64, 0, 32, 32)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfcr3"]
+atlas = ExtResource("2_olh0o")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_603wn"]
+atlas = ExtResource("3_1cpeg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nysy1"]
+atlas = ExtResource("3_1cpeg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utu72"]
+atlas = ExtResource("3_1cpeg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2a3p"]
+atlas = ExtResource("3_1cpeg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jybe0"]
+atlas = ExtResource("4_y5ykp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t754"]
+atlas = ExtResource("4_y5ykp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qinng"]
+atlas = ExtResource("4_y5ykp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv23c"]
+atlas = ExtResource("4_y5ykp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6b6q"]
+atlas = ExtResource("5_1d5g5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8yfa"]
+atlas = ExtResource("5_1d5g5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwntf"]
+atlas = ExtResource("5_ng2o0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2vps"]
+atlas = ExtResource("5_ng2o0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2logn"]
+atlas = ExtResource("6_d7m11")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnd47"]
+atlas = ExtResource("6_d7m11")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8n5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ggcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8c67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mte73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfcr3")
+}],
+"loop": true,
+"name": &"camina-fuego",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_603wn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nysy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utu72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2a3p")
+}],
+"loop": true,
+"name": &"camina-normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jybe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t754")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qinng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv23c")
+}],
+"loop": true,
+"name": &"camina-tierra",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6b6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8yfa")
+}],
+"loop": true,
+"name": &"idle-fuego",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_hwntf")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_p2vps")
+}],
+"loop": true,
+"name": &"idle-normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2logn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnd47")
+}],
+"loop": true,
+"name": &"idle-tierra",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r5pm"]
+size = Vector2(48, 51)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ahlrm")
 
-[node name="Idle-sprite" type="Sprite2D" parent="."]
-position = Vector2(608, 296)
-texture = ExtResource("1_bmvhn")
-hframes = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(611.5, 298.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+position = Vector2(0, -2)
+rotation = -3.14159
+scale = Vector2(0.973477, 1.85293)
 shape = SubResource("RectangleShape2D_ktjrv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_qhl32")
-}
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(1.625, 1.625)
+sprite_frames = SubResource("SpriteFrames_a8n5i")
+animation = &"idle-fuego"
+speed_scale = 1.5
+
+[node name="disparo" type="Marker2D" parent="."]
+scale = Vector2(0.821619, 0.490887)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_6r5pm")
+debug_color = Color(0.929565, 0.120451, 0.585068, 0.42)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(5.96046e-07, -2)
+scale = Vector2(2.4, 2.5)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.104
+one_shot = true

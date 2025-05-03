@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://dn7lu1h60qyna"]
+
+[ext_resource type="Script" path="res://Scripts/pajaro.gd" id="1_oy3mq"]
+[ext_resource type="Texture2D" uid="uid://bg2hie5v3btqy" path="res://assets/sprites/pajaro.png" id="2_e8ltd"]
+[ext_resource type="Texture2D" uid="uid://notae6rki4un" path="res://assets/sprites/items/90puntos.png" id="3_o777x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1enpc"]
+atlas = ExtResource("3_o777x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lph5t"]
+atlas = ExtResource("3_o777x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diby4"]
+atlas = ExtResource("3_o777x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifr0l"]
+atlas = ExtResource("2_e8ltd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuosw"]
+atlas = ExtResource("2_e8ltd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xhdl"]
+atlas = ExtResource("2_e8ltd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0yac6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1enpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lph5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diby4")
+}],
+"loop": true,
+"name": &"puntos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifr0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuosw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xhdl")
+}],
+"loop": true,
+"name": &"volando",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g6ce"]
+size = Vector2(52, 23)
+
+[node name="Node2D" type="CharacterBody2D" groups=["Enemigos"]]
+script = ExtResource("1_oy3mq")
+
+[node name="pajaro" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.86102e-06, -2.86102e-06)
+scale = Vector2(1.9375, 1.9375)
+sprite_frames = SubResource("SpriteFrames_0yac6")
+animation = &"volando"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 1.5)
+shape = SubResource("RectangleShape2D_1g6ce")

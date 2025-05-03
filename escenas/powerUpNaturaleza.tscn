@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdifdqss080mw"]
+
+[ext_resource type="Script" path="res://Scripts/power_up_naturaleza.gd" id="1_iddx2"]
+[ext_resource type="Texture2D" uid="uid://c5ytg0ui67mmo" path="res://assets/sprites/items/power-up tierra.png" id="2_kndpm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyude"]
+size = Vector2(4, 5)
+
+[sub_resource type="Animation" id="Animation_fvvr1"]
+resource_name = "PWagua"
+length = 0.1413
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_cei84"]
+resource_name = "PWfuego"
+length = 0.1413
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_ul7dk"]
+resource_name = "PWnaturaleza"
+length = 0.3398
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 7]
+}
+
+[sub_resource type="Animation" id="Animation_vvblb"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_essbb"]
+resource_name = "corazon"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666666, 0.133333, 0.166667, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_moyxb"]
+resource_name = "mosquito"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nrwxd"]
+_data = {
+"PWagua": SubResource("Animation_fvvr1"),
+"PWfuego": SubResource("Animation_cei84"),
+"PWnaturaleza": SubResource("Animation_ul7dk"),
+"RESET": SubResource("Animation_vvblb"),
+"corazon": SubResource("Animation_essbb"),
+"mosquito": SubResource("Animation_moyxb")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5olu"]
+size = Vector2(36.5, 42.875)
+
+[node name="Node2D" type="Area2D" groups=["powerups"]]
+position = Vector2(-9, 26)
+script = ExtResource("1_iddx2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.5, -26.5)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("2_kndpm")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -26)
+shape = SubResource("RectangleShape2D_qyude")
+debug_color = Color(0.90644, 0.00012591, 0.743336, 0.42)
+
+[node name="AnimaPWnaturaleza" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nrwxd")
+}
+autoplay = "PWagua"
+speed_scale = 0.598
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8.75, -25.5625)
+shape = SubResource("RectangleShape2D_i5olu")
+debug_color = Color(0.109184, 0.522184, 1, 0.42)
