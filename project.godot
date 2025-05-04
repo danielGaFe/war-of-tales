@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="War of Tales"
-run/main_scene="res://escenas/N1.tscn"
+run/main_scene="res://escenas/menuPrincipal.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
-config/git_sha="57f722aac53080b98992bd1a62812fce33faffae"
+config/git_sha="aad912b0801a5e56c0019121d7a5a58e44a4072c"
 
 [autoload]
 

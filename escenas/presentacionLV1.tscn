@@ -1,38 +1,138 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj3xn4fqvpq01"]
+[gd_scene load_steps=10 format=3 uid="uid://cj3xn4fqvpq01"]
 
 [ext_resource type="Script" path="res://Scripts/presentacion_lv_1.gd" id="1_2qqw3"]
-[ext_resource type="Texture2D" uid="uid://chipoferporhl" path="res://assets/sprites/presentaciones/lv1.png" id="1_y8xkr"]
+[ext_resource type="Texture2D" uid="uid://oatx88odqaj1" path="res://assets/Presentacion/fondo.png" id="2_g0r2u"]
+[ext_resource type="Texture2D" uid="uid://b2ryopmmgq77c" path="res://assets/Presentacion/logo.png" id="3_14rlp"]
+[ext_resource type="Texture2D" uid="uid://dx2sd3e4hj3wh" path="res://assets/Presentacion/level1.png" id="4_k8jqm"]
+[ext_resource type="Texture2D" uid="uid://ba6w2y7yrirqh" path="res://assets/Presentacion/jack.png" id="5_dfdvm"]
+[ext_resource type="Texture2D" uid="uid://hqxsesrw3x28" path="res://assets/Presentacion/nube.png" id="6_fwsrm"]
 
 [sub_resource type="Animation" id="Animation_ehe4i"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("TextureRect/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(2149, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(367, -66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect/Sprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-539, 724)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect/Sprite2D4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2848, 634)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect/Sprite2D4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_6di0u"]
 resource_name = "lv1"
-length = 0.1
+length = 0.4333
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("TextureRect/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"times": PackedFloat32Array(0, 0.0333333, 0.4333),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
+"update": 0,
+"values": [Vector2(2149, 256), Vector2(1672, 256), Vector2(1672, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.430729),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(367, -66), Vector2(367, -66), Vector2(367, 421), Vector2(367, 421)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect/Sprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.4333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-539, 724), Vector2(-539, 724), Vector2(686, 724), Vector2(686, 724)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect/Sprite2D4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-844, 693), Vector2(2848, 693)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect/Sprite2D4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rtyyx"]
@@ -41,22 +141,49 @@ _data = {
 "lv1": SubResource("Animation_6di0u")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_2qqw3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(963.556, 541)
-scale = Vector2(0.998148, 0.998148)
-texture = ExtResource("1_y8xkr")
-hframes = 3
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -35.0
+offset_top = -36.0
+offset_right = 1956.0
+offset_bottom = 1116.0
+texture = ExtResource("2_g0r2u")
+expand_mode = 1
+
+[node name="Sprite2D4" type="Sprite2D" parent="TextureRect"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2848, 634)
+scale = Vector2(0.348562, 0.348562)
+texture = ExtResource("6_fwsrm")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
+position = Vector2(2149, 256)
+scale = Vector2(0.132653, 0.132653)
+texture = ExtResource("3_14rlp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="TextureRect"]
+position = Vector2(367, -66)
+scale = Vector2(0.294444, 0.294444)
+texture = ExtResource("4_k8jqm")
+
+[node name="Sprite2D3" type="Sprite2D" parent="TextureRect"]
+position = Vector2(-539, 724)
+scale = Vector2(0.328947, 0.328947)
+texture = ExtResource("5_dfdvm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_rtyyx")
 }
+autoplay = "lv1"
 speed_scale = 0.063
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 5.7
 one_shot = true
 autostart = true
