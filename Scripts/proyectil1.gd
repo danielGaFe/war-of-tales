@@ -8,11 +8,11 @@ func _ready():
 
 func _physics_process(delta):
 	position += direction * speed * delta  # Mueve el proyectil
-	if position.x > get_viewport_rect().size.x or position.x < 0: # Se Destruye si sale de la pantalla (en el eje X)
-		queue_free()  # Elimina proyectil
+
 
 # Función para controlar colisiones
-func _on_body_entered(body):
-	if body.is_in_group("Enemigos"):  # Si impacta con un enemigo que esté en ese grupo
-		body.recibir_golpe()  # Se llama aa la función recibir_golpe() en la rana
-		queue_free()  # Destruye el proyectil
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemigos") or body.is_in_group("ColisionSinDaño"):
+		if body.has_method("recibir_golpe"):
+			body.call_deferred("recibir_golpe")  # LLAMADA DIFERIDA para evitar modificar colisiones en medio del frame
+		call_deferred("queue_free")  # Eliminar el proyectil aplazado

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c42f48hil3ihd"]
+[gd_scene load_steps=4 format=3 uid="uid://c42f48hil3ihd"]
 
 [ext_resource type="Script" path="res://Scripts/vidas.gd" id="1_d8vrm"]
 [ext_resource type="FontFile" uid="uid://dob7ob11ornpn" path="res://assets/fuente/SchoolBookNew-Regular.ttf" id="2_ennkk"]
+[ext_resource type="AudioStream" uid="uid://cu42e5gw11anl" path="res://assets/SONIDOS/male-death-sound-128357.mp3" id="3_ovdmp"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = 3
@@ -23,3 +24,7 @@ theme_override_fonts/font = ExtResource("2_ennkk")
 theme_override_font_sizes/font_size = 63
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="muerte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ovdmp")
+volume_db = 8.525

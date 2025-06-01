@@ -23,6 +23,7 @@ func recibir_golpe():
 	colision.set_deferred("disabled", true) #Desactiva la colisión
 	anima_mosquito.stop() #Se para la animación 
 	anima_mosquito.play("puntos") #Se reproduce la animación puntos
+	$puntos.play()
 	emit_signal("enemigo_muerto", 90)#Emito la señal de que el enemigo ha muerto y sumo 90 puntos al marcador
 	var tween = create_tween()# Crea un nuevo tween para desvanecer la animación de puntos
 	tween.tween_property(anima_mosquito, "modulate:a", 0.0, 2.0)#Programo el desvanecimiento de los puntos

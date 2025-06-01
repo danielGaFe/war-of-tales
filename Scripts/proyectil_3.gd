@@ -10,11 +10,11 @@ func _ready():
 
 func _physics_process(delta):
 	position += direction * speed * delta  # Mueve el proyectil
-	if position.x > get_viewport_rect().size.x or position.x < 0: 	# Destruye el proyectil si sale de la pantalla 
-		queue_free()  # Elimina el proyectil
+
 
 # Función para manejar colisiones
-func _on_body_entered(body):
-	if body.is_in_group("Enemigos"):  # Si impacta con un enemigo del grupo Enemigos
-		body.recibir_golpe()  # Llama aa la función recibir_golpe()
-		queue_free()  # Destruye el proyectil
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemigos") or body.is_in_group("ColisionSinDaño"):
+		if body.has_method("recibir_golpe"):
+			body.call_deferred("recibir_golpe")  # LLAMADA DIFERIDA para evitar modificar colisiones en medio del frame
+		call_deferred("queue_free")  # Eliminar el proyectil aplazado

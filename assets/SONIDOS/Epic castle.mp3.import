@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn3qsi2jjcinh"
+path="res://.godot/imported/Epic castle.mp3-5efb942bfe4b5b3147cb8b9f57464eca.mp3str"
+
+[deps]
+
+source_file="res://assets/SONIDOS/Epic castle.mp3"
+dest_files=["res://.godot/imported/Epic castle.mp3-5efb942bfe4b5b3147cb8b9f57464eca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -18,6 +18,7 @@ func recibir_golpe():
 	colision.set_deferred("disabled", true)  # Desactiva colisión
 	anima_pajaro.stop() #Se para la animación de pajaro
 	anima_pajaro.play("puntos") #Da inicio la animación puntos
+	$puntos.play()
 	emit_signal("enemigo_muerto", 90) #Emito la señal de que el enemigo ha muerto y sumo 90 puntos al marcador
 	var tween = create_tween() # Crea un nuevo tween para desvanecer la animación de puntos
 	tween.tween_property(anima_pajaro, "modulate:a", 0.0, 2.0)  #Programo el desvanecimiento de los puntos

@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://csrckva6sbem3"]
+
+[ext_resource type="Script" path="res://Scripts/libro_sh.gd" id="1_lcpam"]
+[ext_resource type="PackedScene" uid="uid://bfo3thkf8syj0" path="res://escenas/powerUpAgua.tscn" id="2_dmtuy"]
+[ext_resource type="PackedScene" uid="uid://dxneeiyx0e2gr" path="res://escenas/powerUpFuego.tscn" id="3_7l7lr"]
+[ext_resource type="PackedScene" uid="uid://bdifdqss080mw" path="res://escenas/powerUpNaturaleza.tscn" id="4_ftktc"]
+[ext_resource type="Texture2D" uid="uid://1bnvrt61pltn" path="res://assets/sprites/items/libro.png" id="5_g3idq"]
+[ext_resource type="Script" path="res://Scripts/power_up_aguash.gd" id="6_5mdhk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3uxc"]
+atlas = ExtResource("5_g3idq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fhd5"]
+atlas = ExtResource("5_g3idq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnugp"]
+atlas = ExtResource("5_g3idq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e10xw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3uxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fhd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnugp")
+}],
+"loop": true,
+"name": &"book",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm0du"]
+size = Vector2(65.5, 76.5)
+
+[node name="Libro" type="CharacterBody2D" groups=["ColisionSinDaño"]]
+position = Vector2(-4, -5)
+script = ExtResource("1_lcpam")
+agua = ExtResource("2_dmtuy")
+fuego = ExtResource("3_7l7lr")
+tierra = ExtResource("4_ftktc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(13.25, 15.8076)
+scale = Vector2(2.10938, 2.48798)
+sprite_frames = SubResource("SpriteFrames_e10xw")
+animation = &"book"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14.25, 16.75)
+shape = SubResource("RectangleShape2D_fm0du")
+
+[node name="agua" parent="." instance=ExtResource("2_dmtuy")]
+visible = false
+position = Vector2(-4, 26)
+script = ExtResource("6_5mdhk")
+
+[node name="fuego" parent="." instance=ExtResource("3_7l7lr")]
+visible = false
+position = Vector2(4, 0)
+
+[node name="tierra" parent="." instance=ExtResource("4_ftktc")]
+visible = false
+position = Vector2(-4, 25)

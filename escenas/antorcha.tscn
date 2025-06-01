@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl1rpq0fcro3v"]
+
+[ext_resource type="Texture2D" uid="uid://besmllo3onynd" path="res://assets/escenarios/antorcha.png" id="1_xnajr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3glet"]
+atlas = ExtResource("1_xnajr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss374"]
+atlas = ExtResource("1_xnajr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkxnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3glet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss374")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.8147e-06, -3.8147e-06)
+scale = Vector2(3.875, 3.875)
+sprite_frames = SubResource("SpriteFrames_vkxnh")
+autoplay = "default"
+frame = 1
+frame_progress = 0.901857

@@ -1,25 +1,31 @@
 extends CanvasLayer
 
-@onready var label = $Label  # Nodo del Label donde se muestran las vidas
-var vidas = 3  # Número inicial de vidas
+@onready var label = $Label
 
 func _ready():
-	actualizar_label()  #Se llama a la función actualizar_label
+	actualizar_label()# Actualiza el texto al iniciar la escena
 
-func perder_vida(): #Si se pierde una vida
-	vidas -= 1 #Resta una vida al maracador
-	actualizar_label() #Se actualiza label
-	if vidas <= -1: #Comprueba si vidas es igual o menor a -1
-		game_over() #De ser así se llama a game over
+func perder_vida():
+	if SenalGlobal.vidas <= 1:# Si queda 1 o menos vidas...
+		SenalGlobal.vidas = 0 #Se queda en 0 vidas (sin negativas)
+		actualizar_label() # Actualiza el label para reflejarlo
+		call_deferred("game_over") # Llama a game_over de forma diferida 
+		return# Sale de la función para no restar más vidas
+	SenalGlobal.vidas -= 1 # Resta una vida
+	$muerte.play()# Reproduce sonido de muerte
+	actualizar_label()
 
-func ganar_vida(): #Si se gana una vida
-	vidas += 1 #Se suma 1 al marcador de vidas
-	actualizar_label() #Se actualiza label
+# Función para ganar una vida
+func ganar_vida():
+	SenalGlobal.vidas += 1
+	actualizar_label()
 
+# Función para actualizar label
 func actualizar_label():
-	label.text = "x" + str(vidas)  # Actualiza el texto de label
+	label.text = "x" + str(SenalGlobal.vidas)
 
+# Función que se ejecuta cuando se queda sin vidas
 func game_over():
 	print("Game Over")
-	get_tree().reload_current_scene()
-	# PENDIENTE DE IMPLEMENTAR GAMEOVER
+	SenalGlobal.puntos_para_ranking = SenalGlobal.puntos  
+	get_tree().change_scene_to_file("res://escenas/ranking.tscn")

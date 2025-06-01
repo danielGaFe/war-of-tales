@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://cgftsnmhlvudh"]
+
+[ext_resource type="Script" path="res://Scripts/mosquito_sh.gd" id="1_55al3"]
+[ext_resource type="Texture2D" uid="uid://bnku76to8d5s6" path="res://assets/sprites/mosquito.png" id="2_l8x5m"]
+[ext_resource type="Texture2D" uid="uid://notae6rki4un" path="res://assets/sprites/items/90puntos.png" id="3_akrtv"]
+[ext_resource type="AudioStream" uid="uid://co8q1q5cmvp26" path="res://assets/SONIDOS/classic-game-action-positive-5-224402.mp3" id="4_bpueg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26r5o"]
+size = Vector2(40, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxr4d"]
+atlas = ExtResource("2_l8x5m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itght"]
+atlas = ExtResource("2_l8x5m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5maio"]
+atlas = ExtResource("3_akrtv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4odv"]
+atlas = ExtResource("3_akrtv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwrkh"]
+atlas = ExtResource("3_akrtv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yc075"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxr4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itght")
+}],
+"loop": true,
+"name": &"mosquito",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5maio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4odv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwrkh")
+}],
+"loop": true,
+"name": &"puntos",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="CharacterBody2D" groups=["Enemigos"]]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_55al3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 2.5)
+shape = SubResource("RectangleShape2D_26r5o")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="mosquito" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.6875, 1.6875)
+sprite_frames = SubResource("SpriteFrames_yc075")
+animation = &"mosquito"
+frame_progress = 0.87262
+speed_scale = 2.0
+
+[node name="puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bpueg")

@@ -52,7 +52,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_p3qk6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.737193, 0.737193, 0.737193, 1)
+modulate = Color(0.737255, 0.737255, 0.737255, 0.780392)
 z_index = 1
 position = Vector2(233.423, 192.902)
 rotation = -0.0954892

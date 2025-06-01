@@ -1,0 +1,132 @@
+[gd_scene load_steps=21 format=3 uid="uid://dacvfh82gdnym"]
+
+[ext_resource type="Texture2D" uid="uid://bih3pqy33vt85" path="res://assets/sprites/JEFES/JEFE1.png" id="1_q65m3"]
+[ext_resource type="Script" path="res://Scripts/jefe_1.gd" id="1_vd8qd"]
+[ext_resource type="PackedScene" uid="uid://boyg0ato4g88k" path="res://escenas/bala_jefe1.tscn" id="2_l40mp"]
+[ext_resource type="Texture2D" uid="uid://dkyw16egngaap" path="res://assets/sprites/JEFES/JEFE1_DAÑO.png" id="3_0bkcy"]
+[ext_resource type="AudioStream" uid="uid://b4b17sas4g2k4" path="res://assets/SONIDOS/065110_seamless-rocket-booster-roar-amp-crackle-42487.mp3" id="4_xxjkg"]
+[ext_resource type="Texture2D" uid="uid://notae6rki4un" path="res://assets/sprites/items/90puntos.png" id="5_ld6px"]
+[ext_resource type="AudioStream" uid="uid://l4mj138w0wma" path="res://assets/SONIDOS/grunting-in-gas-mask-38699.mp3" id="7_xx3xl"]
+[ext_resource type="AudioStream" uid="uid://ba00x506wu8do" path="res://assets/SONIDOS/scary-monster-growl-roar-1-199379.mp3" id="8_833yr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f645q"]
+radius = 27.4591
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg2x1"]
+atlas = ExtResource("1_q65m3")
+region = Rect2(0, 0, 550, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdudb"]
+atlas = ExtResource("1_q65m3")
+region = Rect2(550, 0, 550, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2beao"]
+atlas = ExtResource("1_q65m3")
+region = Rect2(1100, 0, 550, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l4xp"]
+atlas = ExtResource("3_0bkcy")
+region = Rect2(0, 0, 550, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7qkv"]
+atlas = ExtResource("3_0bkcy")
+region = Rect2(550, 0, 550, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eia4"]
+atlas = ExtResource("3_0bkcy")
+region = Rect2(1100, 0, 550, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvlw0"]
+atlas = ExtResource("3_0bkcy")
+region = Rect2(1650, 0, 550, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7vx7"]
+atlas = ExtResource("5_ld6px")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k23y"]
+atlas = ExtResource("5_ld6px")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54vrm"]
+atlas = ExtResource("5_ld6px")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qhqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg2x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdudb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2beao")
+}],
+"loop": true,
+"name": &"JEFE1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l4xp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7qkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eia4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvlw0")
+}],
+"loop": false,
+"name": &"JEFE1_DAÑO",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7vx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k23y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54vrm")
+}],
+"loop": true,
+"name": &"puntos",
+"speed": 13.0
+}]
+
+[node name="JEFE1" type="CharacterBody2D" groups=["Enemigos"]]
+position = Vector2(19, 425)
+script = ExtResource("1_vd8qd")
+bullet_scene = ExtResource("2_l40mp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Inmune"]]
+position = Vector2(43, 89)
+shape = SubResource("CircleShape2D_f645q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(214, 265)
+sprite_frames = SubResource("SpriteFrames_1qhqv")
+animation = &"JEFE1_DAÑO"
+frame = 3
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(52, 71)
+stream = ExtResource("4_xxjkg")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(41, 398)
+
+[node name="gruñe" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_xx3xl")
+
+[node name="muere" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_833yr")

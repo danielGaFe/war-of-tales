@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce3djs6v42rcy"]
+
+[ext_resource type="Script" path="res://Scripts/proyectil_1_vuelo.gd" id="1_5j1nb"]
+[ext_resource type="Texture2D" uid="uid://d0tgmy4m3y0i7" path="res://assets/sprites/PersonajePrincipal/disparo-normal.png" id="2_5c8vy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vccw"]
+radius = 6.57647
+
+[node name="Node2D" type="Area2D" groups=["disparo"]]
+script = ExtResource("1_5j1nb")
+
+[node name="BALA1" type="Sprite2D" parent="."]
+position = Vector2(6, -7)
+scale = Vector2(2.766, 2.766)
+texture = ExtResource("2_5c8vy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -6)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_8vccw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

@@ -19,11 +19,11 @@ position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_2bofe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9, 0)
 scale = Vector2(3.09375, 3.09375)
 texture = ExtResource("1_0k4d3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 6.5)
+position = Vector2(-3, 6)
 shape = SubResource("RectangleShape2D_5ddcm")
+one_way_collision = true
 debug_color = Color(0.810209, 0.286926, 0.744033, 0.42)

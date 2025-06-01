@@ -8,7 +8,6 @@ func _ready():
 	detector.body_entered.connect(_on_body_entered) # Conecta la señal para detectar colisiones con el jugador
 
 func _on_body_entered(body: Node) -> void:
-	
 	if body.is_in_group("Player"): # Verifica si el sprite entra en el área del jugador
 		var cansancio_node = get_tree().get_root().get_node("NIVEL1/Cansancio") # Busca el nodo de Cansancio en la escena principal
 		if cansancio_node: #Si cansancio_node existe

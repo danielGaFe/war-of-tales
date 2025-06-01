@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://cqhjq35cwe5h3"]
+
+[ext_resource type="Script" path="res://Scripts/pajaro_inversa.gd" id="1_be3k3"]
+[ext_resource type="Texture2D" uid="uid://notae6rki4un" path="res://assets/sprites/items/90puntos.png" id="2_05kf0"]
+[ext_resource type="Texture2D" uid="uid://bg2hie5v3btqy" path="res://assets/sprites/pajaro.png" id="3_5rkjt"]
+[ext_resource type="AudioStream" uid="uid://co8q1q5cmvp26" path="res://assets/SONIDOS/classic-game-action-positive-5-224402.mp3" id="4_ge1nk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1enpc"]
+atlas = ExtResource("2_05kf0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lph5t"]
+atlas = ExtResource("2_05kf0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diby4"]
+atlas = ExtResource("2_05kf0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifr0l"]
+atlas = ExtResource("3_5rkjt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuosw"]
+atlas = ExtResource("3_5rkjt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xhdl"]
+atlas = ExtResource("3_5rkjt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0yac6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1enpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lph5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diby4")
+}],
+"loop": true,
+"name": &"puntos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifr0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuosw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xhdl")
+}],
+"loop": true,
+"name": &"volando",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g6ce"]
+size = Vector2(51.5, 37)
+
+[node name="Node2D" type="CharacterBody2D" groups=["Enemigos"]]
+script = ExtResource("1_be3k3")
+
+[node name="pajaro" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.20879, 0.210221)
+scale = Vector2(-1.938, 1.938)
+sprite_frames = SubResource("SpriteFrames_0yac6")
+animation = &"volando"
+frame_progress = 0.435895
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.25, 0.5)
+shape = SubResource("RectangleShape2D_1g6ce")
+
+[node name="puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ge1nk")

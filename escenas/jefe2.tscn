@@ -1,0 +1,128 @@
+[gd_scene load_steps=20 format=3 uid="uid://d2mxp6usr0e3e"]
+
+[ext_resource type="Script" path="res://Scripts/jefe_2.gd" id="1_d7ik8"]
+[ext_resource type="PackedScene" uid="uid://cxi4xrxd0iqjr" path="res://escenas/bala_jefe2.tscn" id="2_cdven"]
+[ext_resource type="Texture2D" uid="uid://b52xsxdyp6adp" path="res://assets/sprites/JEFES/JEFE2.png" id="3_g5vra"]
+[ext_resource type="Texture2D" uid="uid://o8sa8yrwd05m" path="res://assets/sprites/JEFES/JEFE2_DAÑO.png" id="4_1mvy4"]
+[ext_resource type="Texture2D" uid="uid://notae6rki4un" path="res://assets/sprites/items/90puntos.png" id="5_3fdqy"]
+[ext_resource type="AudioStream" uid="uid://drjlpflp807ba" path="res://assets/SONIDOS/witch-laugh-189108.mp3" id="5_g66r0"]
+[ext_resource type="AudioStream" uid="uid://bpvjp0otcq2jl" path="res://assets/SONIDOS/grito-81340.mp3" id="7_lx06i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f645q"]
+radius = 65.2533
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfwdp"]
+atlas = ExtResource("3_g5vra")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv1jo"]
+atlas = ExtResource("3_g5vra")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrufa"]
+atlas = ExtResource("3_g5vra")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lipvd"]
+atlas = ExtResource("3_g5vra")
+region = Rect2(3072, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckifx"]
+atlas = ExtResource("4_1mvy4")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq5y5"]
+atlas = ExtResource("4_1mvy4")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f6nw"]
+atlas = ExtResource("4_1mvy4")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5heim"]
+atlas = ExtResource("5_3fdqy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd42s"]
+atlas = ExtResource("5_3fdqy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vuqv"]
+atlas = ExtResource("5_3fdqy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qhqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfwdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv1jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrufa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lipvd")
+}],
+"loop": true,
+"name": &"JEFE1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckifx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq5y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f6nw")
+}],
+"loop": false,
+"name": &"JEFE1_DAÑO",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5heim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd42s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vuqv")
+}],
+"loop": true,
+"name": &"puntos",
+"speed": 5.0
+}]
+
+[node name="JEFE1" type="CharacterBody2D" groups=["Enemigos"]]
+position = Vector2(19, 425)
+script = ExtResource("1_d7ik8")
+bullet_scene = ExtResource("2_cdven")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Inmune"]]
+position = Vector2(-235, 38)
+shape = SubResource("CircleShape2D_f645q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.629883, 0.629883)
+sprite_frames = SubResource("SpriteFrames_1qhqv")
+animation = &"JEFE1"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(52, 71)
+stream = ExtResource("5_g66r0")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-211, 98)
+
+[node name="grito" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_lx06i")
+volume_db = 14.222
+pitch_scale = 2.63

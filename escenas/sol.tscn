@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp3t3t2mxk512"]
+
+[ext_resource type="Texture2D" uid="uid://viepcwnupj5e" path="res://assets/escenarios/sol.png" id="1_78ec4"]
+[ext_resource type="Script" path="res://Scripts/sol.gd" id="1_c321b"]
+[ext_resource type="Shader" path="res://escenas/sol.gdshader" id="2_tchnr"]
+
+[sub_resource type="Environment" id="Environment_lm316"]
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lx75e"]
+shader = ExtResource("2_tchnr")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_c321b")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lm316")
+
+[node name="Sol" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lx75e")
+use_parent_material = true
+position = Vector2(3, 190)
+texture = ExtResource("1_78ec4")

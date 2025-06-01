@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://etqlatjmq1p4"
+path="res://.godot/imported/Epic boss-2.mp3-38a3d222ff728da9cbb784b541e94607.mp3str"
+
+[deps]
+
+source_file="res://assets/SONIDOS/Epic boss-2.mp3"
+dest_files=["res://.godot/imported/Epic boss-2.mp3-38a3d222ff728da9cbb784b541e94607.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,8 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://duqkhfjskoyw3"]
+[gd_scene load_steps=27 format=3 uid="uid://duqkhfjskoyw3"]
 
 [ext_resource type="Script" path="res://Scripts/rana.gd" id="1_wblam"]
 [ext_resource type="Texture2D" uid="uid://bgcibjr41gr0h" path="res://assets/sprites/rana.png" id="2_ev85t"]
 [ext_resource type="Texture2D" uid="uid://pt3a5ux7ucbw" path="res://assets/sprites/items/50puntos.png" id="2_reuoe"]
+[ext_resource type="AudioStream" uid="uid://co8q1q5cmvp26" path="res://assets/SONIDOS/classic-game-action-positive-5-224402.mp3" id="4_vqd10"]
+[ext_resource type="AudioStream" uid="uid://fbdn0m0xj8rj" path="res://assets/SONIDOS/frog-croaking-sound-effect-322956.mp3" id="5_3gt3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyude"]
 size = Vector2(27, 58)
@@ -166,3 +168,10 @@ scale = Vector2(1.7, 1.7)
 sprite_frames = SubResource("SpriteFrames_6v316")
 animation = &"rana"
 speed_scale = 3.0
+
+[node name="puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vqd10")
+
+[node name="rana" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3gt3e")
+pitch_scale = 1.2

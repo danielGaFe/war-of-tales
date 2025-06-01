@@ -1,0 +1,154 @@
+[gd_scene load_steps=31 format=3 uid="uid://c265j2ndrlppm"]
+
+[ext_resource type="Script" path="res://Scripts/n1.gd" id="1_pbok5"]
+[ext_resource type="PackedScene" uid="uid://b6rlktelp41fn" path="res://escenas/fondoNivel4.tscn" id="2_rqqpe"]
+[ext_resource type="PackedScene" uid="uid://c1nmep6dp5a37" path="res://escenas/Player/PlayerVuelo.tscn" id="3_7d28f"]
+[ext_resource type="PackedScene" uid="uid://c42f48hil3ihd" path="res://escenas/vidas.tscn" id="4_aotya"]
+[ext_resource type="PackedScene" uid="uid://c6pfy50hkcli4" path="res://escenas/marcador.tscn" id="5_f4u1o"]
+[ext_resource type="PackedScene" uid="uid://b15ycpeeiei8f" path="res://escenas/marcadorPuntos.tscn" id="6_vvrif"]
+[ext_resource type="PackedScene" uid="uid://c1ujututco7ck" path="res://escenas/cansancio.tscn" id="7_hx5nm"]
+[ext_resource type="Script" path="res://Scripts/cansancioN4.gd" id="8_hdmvr"]
+[ext_resource type="Texture2D" uid="uid://6xysovo23gpd" path="res://assets/tiles/provisional.png" id="9_rodtq"]
+[ext_resource type="Texture2D" uid="uid://4i2hyojjcg6p" path="res://assets/tiles/nubes.png" id="10_uykcn"]
+[ext_resource type="Texture2D" uid="uid://bysyovfkjmq46" path="res://assets/tiles/nubes2.png" id="11_xp7dl"]
+[ext_resource type="Texture2D" uid="uid://dxw6fldf3bkh" path="res://assets/tiles/ladrillos.png" id="12_mlbgm"]
+[ext_resource type="Texture2D" uid="uid://bqw13161bv3yd" path="res://assets/tiles/suelo2.png" id="13_um1ie"]
+[ext_resource type="Script" path="res://Scripts/control_enemigos2.gd" id="14_ggkxi"]
+[ext_resource type="PackedScene" uid="uid://b6va4fih61dk6" path="res://escenas/pezSH.tscn" id="15_53ufp"]
+[ext_resource type="PackedScene" uid="uid://cv2uisrrcq1bt" path="res://escenas/EstrellaSH.tscn" id="17_2812m"]
+[ext_resource type="PackedScene" uid="uid://d2mxp6usr0e3e" path="res://escenas/jefe2.tscn" id="18_ixqf8"]
+[ext_resource type="AudioStream" uid="uid://b3rl1kyellanj" path="res://assets/SONIDOS/bruja del mar.mp3" id="21_eeo18"]
+[ext_resource type="AudioStream" uid="uid://bx5cywf0f160f" path="res://assets/SONIDOS/loop-air-bubbles-159283.mp3" id="22_4bgbq"]
+[ext_resource type="PackedScene" uid="uid://csrckva6sbem3" path="res://escenas/libroSH.tscn" id="22_44eec"]
+[ext_resource type="Texture2D" uid="uid://uifm762d5hhq" path="res://assets/escenarios/burbujas.png" id="22_kdur1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hrco"]
+texture = ExtResource("9_rodtq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5q0hx"]
+texture = ExtResource("10_uykcn")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o12is"]
+texture = ExtResource("10_uykcn")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aidps"]
+texture = ExtResource("11_xp7dl")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e12t7"]
+texture = ExtResource("12_mlbgm")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhaj0"]
+texture = ExtResource("13_um1ie")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fdj78"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_2hrco")
+sources/6 = SubResource("TileSetAtlasSource_rhaj0")
+sources/1 = SubResource("TileSetAtlasSource_5q0hx")
+sources/2 = SubResource("TileSetAtlasSource_o12is")
+sources/3 = SubResource("TileSetAtlasSource_aidps")
+sources/4 = SubResource("TileSetAtlasSource_e12t7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jly1d"]
+size = Vector2(2070.5, 94)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t6oko"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(1920, 0, 1)
+inherit_velocity_ratio = 1.0
+gravity = Vector3(0, -100, 0)
+scale_min = 0.1
+scale_max = 0.9
+turbulence_enabled = true
+
+[node name="NIVEL4" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_pbok5")
+
+[node name="Node2D4" parent="." instance=ExtResource("2_rqqpe")]
+
+[node name="Player_Idle" parent="." instance=ExtResource("3_7d28f")]
+position = Vector2(402, 468)
+velocidad = 400.0
+
+[node name="Vidas" parent="Player_Idle" instance=ExtResource("4_aotya")]
+
+[node name="Node2D" parent="." instance=ExtResource("5_f4u1o")]
+
+[node name="Marcador" parent="." instance=ExtResource("6_vvrif")]
+
+[node name="Cansancio" parent="." instance=ExtResource("7_hx5nm")]
+script = ExtResource("8_hdmvr")
+
+[node name="TilemapLayers" type="Node2D" parent="."]
+position = Vector2(134, -237)
+
+[node name="Entorno" type="TileMapLayer" parent="TilemapLayers"]
+position = Vector2(0, -1)
+tile_set = SubResource("TileSet_fdj78")
+
+[node name="Suelo" type="StaticBody2D" parent="TilemapLayers/Entorno"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(867, 1341)
+shape = SubResource("RectangleShape2D_jly1d")
+
+[node name="paredes" type="StaticBody2D" parent="TilemapLayers/Entorno"]
+
+[node name="Enemigos" type="Node2D" parent="."]
+script = ExtResource("14_ggkxi")
+
+[node name="Libro" parent="Enemigos" instance=ExtResource("22_44eec")]
+position = Vector2(-89, -12)
+
+[node name="pez" parent="Enemigos" instance=ExtResource("15_53ufp")]
+position = Vector2(-85, -7)
+
+[node name="Estrella" parent="Enemigos" instance=ExtResource("17_2812m")]
+position = Vector2(-85, -7)
+velocidad = 600.0
+
+[node name="JEFE2" parent="." instance=ExtResource("18_ixqf8")]
+position = Vector2(1605, 349)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_eeo18")
+volume_db = 6.209
+autoplay = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(811, 1025)
+rotation = 0.020944
+scale = Vector2(0.5, 82.64)
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_t6oko")
+texture = ExtResource("22_kdur1")
+lifetime = 11.44
+preprocess = 2.0
+speed_scale = 6.49
+fixed_fps = 60
+draw_order = 0
+trail_lifetime = 0.01
+
+[node name="Libro" parent="." instance=ExtResource("22_44eec")]
+position = Vector2(2342, 103)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_4bgbq")
+volume_db = 10.532
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]

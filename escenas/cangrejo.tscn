@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=3 uid="uid://k6rsem2wx0ho"]
+
+[ext_resource type="Texture2D" uid="uid://bqo4xye0l8tq3" path="res://assets/sprites/cangrejo.png" id="1_13l25"]
+[ext_resource type="Script" path="res://Scripts/cangrejo.gd" id="1_mip54"]
+[ext_resource type="Texture2D" uid="uid://notae6rki4un" path="res://assets/sprites/items/90puntos.png" id="3_w7xxv"]
+[ext_resource type="AudioStream" uid="uid://co8q1q5cmvp26" path="res://assets/SONIDOS/classic-game-action-positive-5-224402.mp3" id="4_i1qis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upmby"]
+atlas = ExtResource("1_13l25")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kghj5"]
+atlas = ExtResource("1_13l25")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhc78"]
+atlas = ExtResource("1_13l25")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltr2n"]
+atlas = ExtResource("1_13l25")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhl0m"]
+atlas = ExtResource("3_w7xxv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i68gm"]
+atlas = ExtResource("3_w7xxv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rvso"]
+atlas = ExtResource("3_w7xxv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcrxc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upmby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kghj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhc78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltr2n")
+}],
+"loop": true,
+"name": &"cangrejos",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhl0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i68gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rvso")
+}],
+"loop": true,
+"name": &"puntos",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8y3c"]
+size = Vector2(62, 40)
+
+[node name="cangrejo" type="CharacterBody2D" groups=["Enemigos"]]
+script = ExtResource("1_mip54")
+
+[node name="cangrejoanima" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.86102e-06, 2.86102e-06)
+scale = Vector2(1.9375, 1.9375)
+sprite_frames = SubResource("SpriteFrames_tcrxc")
+animation = &"cangrejos"
+autoplay = "cangrejos"
+frame_progress = 0.714973
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_f8y3c")
+
+[node name="puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i1qis")

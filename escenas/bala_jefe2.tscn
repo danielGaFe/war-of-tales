@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxi4xrxd0iqjr"]
+
+[ext_resource type="Script" path="res://Scripts/bala-jefe1.gd" id="1_kl5iw"]
+[ext_resource type="Texture2D" uid="uid://x0n22ypyxj3p" path="res://assets/sprites/JEFES/balajefe2.png" id="2_l4rpi"]
+[ext_resource type="Texture2D" uid="uid://notae6rki4un" path="res://assets/sprites/items/90puntos.png" id="3_nmy20"]
+[ext_resource type="AudioStream" uid="uid://chqky4wpht507" path="res://assets/SONIDOS/correct-2-46134.mp3" id="4_06wgh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npajb"]
+atlas = ExtResource("2_l4rpi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkbc5"]
+atlas = ExtResource("2_l4rpi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu5ho"]
+atlas = ExtResource("3_nmy20")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2qsq"]
+atlas = ExtResource("3_nmy20")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxo83"]
+atlas = ExtResource("3_nmy20")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_py5el"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npajb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkbc5")
+}],
+"loop": true,
+"name": &"bala",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu5ho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2qsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxo83")
+}],
+"loop": true,
+"name": &"puntos",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xipx2"]
+radius = 30.0167
+
+[node name="Area2D" type="CharacterBody2D" groups=["Enemigos"]]
+script = ExtResource("1_kl5iw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_py5el")
+animation = &"bala"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xipx2")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_06wgh")

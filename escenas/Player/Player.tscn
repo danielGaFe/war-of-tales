@@ -1,12 +1,20 @@
-[gd_scene load_steps=29 format=3 uid="uid://bjp0fkdsc5kun"]
+[gd_scene load_steps=40 format=3 uid="uid://bjp0fkdsc5kun"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ahlrm"]
 [ext_resource type="Texture2D" uid="uid://cfnodfs7nbavs" path="res://assets/sprites/PersonajePrincipal/mago_caminando_fuego.png" id="2_olh0o"]
 [ext_resource type="Texture2D" uid="uid://3qcnjuptiqpe" path="res://assets/sprites/PersonajePrincipal/mago_caminando_normal.png" id="3_1cpeg"]
 [ext_resource type="Texture2D" uid="uid://brlx2v117hl06" path="res://assets/sprites/PersonajePrincipal/mago_caminando_tierra.png" id="4_y5ykp"]
 [ext_resource type="Texture2D" uid="uid://m4yuxdwchs2b" path="res://assets/sprites/PersonajePrincipal/idle_fuego.png" id="5_1d5g5"]
+[ext_resource type="Texture2D" uid="uid://k6jkysiusbgo" path="res://assets/sprites/PersonajePrincipal/portal_fuera_camara.png" id="5_4uq87"]
 [ext_resource type="Texture2D" uid="uid://iklst7td27qy" path="res://assets/sprites/PersonajePrincipal/mago_idle.png" id="5_ng2o0"]
 [ext_resource type="Texture2D" uid="uid://dt1wiba3dlxo2" path="res://assets/sprites/PersonajePrincipal/idle_tierra.png" id="6_d7m11"]
+[ext_resource type="AudioStream" uid="uid://cbgr5nyso2caw" path="res://assets/SONIDOS/sword-schwing-40520.mp3" id="9_w74xg"]
+[ext_resource type="AudioStream" uid="uid://bjosu0ihs5glf" path="res://assets/SONIDOS/water-droplet-290186.mp3" id="10_qqe17"]
+[ext_resource type="AudioStream" uid="uid://thb8au5qnm7h" path="res://assets/SONIDOS/short-fire-whoosh_1-317280.mp3" id="11_1kucs"]
+[ext_resource type="AudioStream" uid="uid://cklf4giao10qg" path="res://assets/SONIDOS/atmospheric-metallic-swipe-6-195747.mp3" id="12_gv8og"]
+[ext_resource type="AudioStream" uid="uid://syyf2ss0w47f" path="res://assets/SONIDOS/page-flip2-178323.mp3" id="13_du4ng"]
+[ext_resource type="AudioStream" uid="uid://cu42e5gw11anl" path="res://assets/SONIDOS/male-death-sound-128357.mp3" id="14_5uwcf"]
+[ext_resource type="AudioStream" uid="uid://b31a5evauxb7k" path="res://assets/SONIDOS/page-flipping-foley-sound-fx-144160.mp3" id="15_gfthm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktjrv"]
 size = Vector2(47.25, 25.905)
@@ -58,6 +66,18 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_lv23c"]
 atlas = ExtResource("4_y5ykp")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3a0h"]
+atlas = ExtResource("5_4uq87")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hagl1"]
+atlas = ExtResource("5_4uq87")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64fm2"]
+atlas = ExtResource("5_4uq87")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6b6q"]
 atlas = ExtResource("5_1d5g5")
@@ -138,6 +158,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_f3a0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hagl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64fm2")
+}],
+"loop": true,
+"name": &"fuera_camara",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_g6b6q")
 }, {
 "duration": 1.0,
@@ -186,8 +220,9 @@ shape = SubResource("RectangleShape2D_ktjrv")
 position = Vector2(0, 3.05176e-05)
 scale = Vector2(1.625, 1.625)
 sprite_frames = SubResource("SpriteFrames_a8n5i")
-animation = &"idle-fuego"
-speed_scale = 1.5
+animation = &"fuera_camara"
+frame_progress = 0.0703934
+speed_scale = 2.0
 
 [node name="disparo" type="Marker2D" parent="."]
 scale = Vector2(0.821619, 0.490887)
@@ -206,3 +241,33 @@ scale = Vector2(2.4, 2.5)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.104
 one_shot = true
+
+[node name="vuela" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_w74xg")
+
+[node name="agua" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_qqe17")
+volume_db = 24.0
+pitch_scale = 1.99
+
+[node name="fuego" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_1kucs")
+volume_db = 1.705
+pitch_scale = 4.0
+
+[node name="tierra" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_gv8og")
+volume_db = 6.088
+
+[node name="powerup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_du4ng")
+volume_db = 24.0
+pitch_scale = 2.87
+
+[node name="muerte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_5uwcf")
+
+[node name="librosonido" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_gfthm")
+volume_db = 18.328
+max_distance = 700.0

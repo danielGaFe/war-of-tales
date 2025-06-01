@@ -1,0 +1,129 @@
+[gd_scene load_steps=29 format=3 uid="uid://cr3c743a6qqfv"]
+
+[ext_resource type="Script" path="res://Scripts/n1.gd" id="1_bo1tr"]
+[ext_resource type="PackedScene" uid="uid://bgsky3yv42380" path="res://escenas/fondoNivel2.tscn" id="1_svemi"]
+[ext_resource type="PackedScene" uid="uid://c1nmep6dp5a37" path="res://escenas/Player/PlayerVuelo.tscn" id="2_qepkd"]
+[ext_resource type="PackedScene" uid="uid://c42f48hil3ihd" path="res://escenas/vidas.tscn" id="3_7hpmy"]
+[ext_resource type="PackedScene" uid="uid://b15ycpeeiei8f" path="res://escenas/marcadorPuntos.tscn" id="4_5iuoe"]
+[ext_resource type="PackedScene" uid="uid://c6pfy50hkcli4" path="res://escenas/marcador.tscn" id="5_t6e8e"]
+[ext_resource type="PackedScene" uid="uid://c1ujututco7ck" path="res://escenas/cansancio.tscn" id="6_bc01w"]
+[ext_resource type="Texture2D" uid="uid://6xysovo23gpd" path="res://assets/tiles/provisional.png" id="7_b5poq"]
+[ext_resource type="Script" path="res://Scripts/cansancioN2.gd" id="8_0cgmc"]
+[ext_resource type="Texture2D" uid="uid://4i2hyojjcg6p" path="res://assets/tiles/nubes.png" id="8_v07dt"]
+[ext_resource type="Texture2D" uid="uid://bysyovfkjmq46" path="res://assets/tiles/nubes2.png" id="9_8u2ep"]
+[ext_resource type="Texture2D" uid="uid://dxw6fldf3bkh" path="res://assets/tiles/ladrillos.png" id="10_hw5iu"]
+[ext_resource type="Texture2D" uid="uid://bqw13161bv3yd" path="res://assets/tiles/suelo2.png" id="11_pw1dn"]
+[ext_resource type="Script" path="res://Scripts/control_enemigos.gd" id="14_oqlc2"]
+[ext_resource type="PackedScene" uid="uid://2s6mso5hogkw" path="res://escenas/pajaroSH.tscn" id="15_c7boi"]
+[ext_resource type="PackedScene" uid="uid://cgftsnmhlvudh" path="res://escenas/mosquitoSH.tscn" id="17_203ka"]
+[ext_resource type="PackedScene" uid="uid://csrckva6sbem3" path="res://escenas/libroSH.tscn" id="17_p821x"]
+[ext_resource type="AudioStream" uid="uid://xmt1m8sqwomi" path="res://assets/SONIDOS/Epic boss-1.mp3" id="22_3g3ok"]
+[ext_resource type="PackedScene" uid="uid://dacvfh82gdnym" path="res://escenas/jefe1.tscn" id="22_6rf3y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hrco"]
+texture = ExtResource("7_b5poq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5q0hx"]
+texture = ExtResource("8_v07dt")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o12is"]
+texture = ExtResource("8_v07dt")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aidps"]
+texture = ExtResource("9_8u2ep")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e12t7"]
+texture = ExtResource("10_hw5iu")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhaj0"]
+texture = ExtResource("11_pw1dn")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fdj78"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_2hrco")
+sources/6 = SubResource("TileSetAtlasSource_rhaj0")
+sources/1 = SubResource("TileSetAtlasSource_5q0hx")
+sources/2 = SubResource("TileSetAtlasSource_o12is")
+sources/3 = SubResource("TileSetAtlasSource_aidps")
+sources/4 = SubResource("TileSetAtlasSource_e12t7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jly1d"]
+size = Vector2(2070.5, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibi0f"]
+size = Vector2(84, 78)
+
+[node name="NIVEL2" type="Node2D"]
+script = ExtResource("1_bo1tr")
+
+[node name="ParalaxBackground" parent="." instance=ExtResource("1_svemi")]
+position = Vector2(-454, -164)
+
+[node name="Player_Idle" parent="." instance=ExtResource("2_qepkd")]
+position = Vector2(402, 468)
+velocidad = 400.0
+salto = 0.0
+gravedad = 0.0
+
+[node name="Vidas" parent="Player_Idle" instance=ExtResource("3_7hpmy")]
+
+[node name="Node2D" parent="." instance=ExtResource("5_t6e8e")]
+
+[node name="Marcador" parent="." instance=ExtResource("4_5iuoe")]
+
+[node name="Cansancio" parent="." instance=ExtResource("6_bc01w")]
+script = ExtResource("8_0cgmc")
+
+[node name="TilemapLayers" type="Node2D" parent="."]
+position = Vector2(134, -237)
+
+[node name="Entorno" type="TileMapLayer" parent="TilemapLayers"]
+position = Vector2(0, -1)
+tile_set = SubResource("TileSet_fdj78")
+
+[node name="Suelo" type="StaticBody2D" parent="TilemapLayers/Entorno"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(867, 1341)
+shape = SubResource("RectangleShape2D_jly1d")
+
+[node name="paredes" type="StaticBody2D" parent="TilemapLayers/Entorno"]
+
+[node name="Enemigos" type="Node2D" parent="."]
+script = ExtResource("14_oqlc2")
+
+[node name="pajaro" parent="Enemigos" instance=ExtResource("15_c7boi")]
+position = Vector2(191, -128)
+
+[node name="mosquito" parent="Enemigos" instance=ExtResource("17_203ka")]
+position = Vector2(34, -135)
+
+[node name="Libro" parent="Enemigos" instance=ExtResource("17_p821x")]
+position = Vector2(4060, 636)
+
+[node name="JEFE1" parent="." instance=ExtResource("22_6rf3y")]
+position = Vector2(1430, 650)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="JEFE1"]
+position = Vector2(45, 401)
+shape = SubResource("RectangleShape2D_ibi0f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_3g3ok")
+volume_db = 6.209
+autoplay = true
+
+[node name="Libro" parent="." instance=ExtResource("17_p821x")]
+position = Vector2(2342, 103)

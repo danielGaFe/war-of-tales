@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwpno843q47jn"]
+
+[ext_resource type="Script" path="res://Scripts/power_up_aguash.gd" id="1_3qump"]
+[ext_resource type="Texture2D" uid="uid://1rn7iq8gxlvk" path="res://assets/sprites/items/power-up-azul.png" id="2_401fw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyude"]
+size = Vector2(8, 11)
+
+[sub_resource type="Animation" id="Animation_fvvr1"]
+resource_name = "PWagua"
+length = 0.4753
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12]
+}
+
+[sub_resource type="Animation" id="Animation_vvblb"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_essbb"]
+resource_name = "corazon"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666666, 0.133333, 0.166667, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_moyxb"]
+resource_name = "mosquito"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nrwxd"]
+_data = {
+"PWagua": SubResource("Animation_fvvr1"),
+"RESET": SubResource("Animation_vvblb"),
+"corazon": SubResource("Animation_essbb"),
+"mosquito": SubResource("Animation_moyxb")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahoke"]
+size = Vector2(37, 44)
+
+[node name="Node2D" type="Area2D" groups=["powerups"]]
+position = Vector2(-9, 26)
+script = ExtResource("1_3qump")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.5, -26.5)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("2_401fw")
+hframes = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -26)
+shape = SubResource("RectangleShape2D_qyude")
+
+[node name="AnimaPWagua" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nrwxd")
+}
+autoplay = "PWagua"
+speed_scale = 1.08
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8.5, -26)
+shape = SubResource("RectangleShape2D_ahoke")
+debug_color = Color(0.902701, 0.000150746, 0.755462, 0.42)

@@ -21,9 +21,9 @@ expand_mode = 2
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 0
 offset_left = 845.0
-offset_top = 651.0
+offset_top = 628.0
 offset_right = 1067.0
-offset_bottom = 751.0
+offset_bottom = 728.0
 
 [node name="Button" type="Button" parent="BoxContainer"]
 layout_mode = 2
@@ -43,9 +43,9 @@ flat = true
 [node name="BoxContainer2" type="BoxContainer" parent="."]
 layout_mode = 0
 offset_left = 749.0
-offset_top = 774.0
+offset_top = 738.0
 offset_right = 1177.0
-offset_bottom = 874.0
+offset_bottom = 838.0
 
 [node name="Button" type="Button" parent="BoxContainer2"]
 layout_mode = 2
@@ -64,12 +64,34 @@ flat = true
 
 [node name="BoxContainer3" type="BoxContainer" parent="."]
 layout_mode = 0
-offset_left = 850.0
-offset_top = 903.0
-offset_right = 1059.0
-offset_bottom = 1003.0
+offset_left = 664.0
+offset_top = 845.0
+offset_right = 1263.0
+offset_bottom = 945.0
 
 [node name="Button" type="Button" parent="BoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_disabled_color = Color(0.317647, 0.172549, 0.00392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.172549, 0.00392157, 1)
+theme_override_colors/font_hover_color = Color(0.423197, 0.236974, 0.00702146, 1)
+theme_override_colors/font_pressed_color = Color(0.757829, 0.441566, 0.0274809, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.172549, 0.00392157, 1)
+theme_override_colors/font_color = Color(0.217052, 0.111134, 0.00186453, 1)
+theme_override_fonts/font = ExtResource("2_bpinj")
+theme_override_font_sizes/font_size = 90
+text = "Control keys"
+flat = true
+
+[node name="BoxContainer4" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 950.0
+offset_right = 1059.0
+offset_bottom = 1050.0
+
+[node name="Button" type="Button" parent="BoxContainer4"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_type_variation = &"FlatButton"

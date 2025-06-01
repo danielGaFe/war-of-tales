@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx7t05t4wd2ir"]
+[gd_scene load_steps=11 format=3 uid="uid://cx7t05t4wd2ir"]
 
 [ext_resource type="Script" path="res://Scripts/trepadora.gd" id="1_wwihn"]
 [ext_resource type="Texture2D" uid="uid://cqtqe3xhx8h35" path="res://assets/sprites/planta-trepadora.png" id="2_ytwfc"]
+[ext_resource type="AudioStream" uid="uid://tbcclfpvd3wd" path="res://assets/SONIDOS/quake-and-break-99034.mp3" id="3_kq504"]
 
 [sub_resource type="Animation" id="Animation_vvblb"]
 length = 1.5667
@@ -53,6 +54,54 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("terremoto:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("terremoto:stream_paused")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("terremoto:attenuation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("terremoto:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.159]
 }
 
 [sub_resource type="Animation" id="Animation_asvkn"]
@@ -158,6 +207,54 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("terremoto:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.916667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("terremoto:stream_paused")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.70834),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("terremoto:attenuation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.70833),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.29739]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("terremoto:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.916667, 1.75, 2.70834),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [5.421, 16.005, 1.207]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nrwxd"]
@@ -270,5 +367,9 @@ one_way_collision = true
 position = Vector2(-16.0626, -496)
 shape = SubResource("RectangleShape2D_nx21n")
 one_way_collision = true
+
+[node name="terremoto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kq504")
+volume_db = 1.159
 
 [connection signal="animation_finished" from="AnimaPlanta" to="." method="_on_anima_planta_animation_finished"]

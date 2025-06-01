@@ -1,6 +1,6 @@
 extends PathFollow2D #Clase de tipo PathFollow2D
 
-@export var velocidad: float = 20 # Velocidad a la que se mueve el nodo a lo largo del camino
+@export var velocidad: float = 25# Velocidad a la que se mueve el nodo a lo largo del camino
 @export var velocidadLluvia: float = 200.0 # Velocidad adicional, para simular el movimiento de la lluvia
 var longitudTotal := 0.0 #Almacena la longitud total del camino a recorrer
 

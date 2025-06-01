@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://cl8csxv73o3px"]
+
+[ext_resource type="Texture2D" uid="uid://dbbfisdaw8td4" path="res://assets/escenarios/agua.png" id="1_q3dt7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10a7o"]
+atlas = ExtResource("1_q3dt7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu7ym"]
+atlas = ExtResource("1_q3dt7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkw3m"]
+atlas = ExtResource("1_q3dt7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sni10"]
+atlas = ExtResource("1_q3dt7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu4pq"]
+atlas = ExtResource("1_q3dt7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpwt4"]
+atlas = ExtResource("1_q3dt7")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u3bf1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10a7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu7ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkw3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sni10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu4pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpwt4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.10938, 3.10938)
+sprite_frames = SubResource("SpriteFrames_u3bf1")
+autoplay = "default"
+frame = 5

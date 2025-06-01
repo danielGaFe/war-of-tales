@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://byfs5bvpn43kd"]
+[gd_scene load_steps=11 format=3 uid="uid://byfs5bvpn43kd"]
 
 [ext_resource type="Script" path="res://Scripts/power_vida.gd" id="1_7rviu"]
 [ext_resource type="Texture2D" uid="uid://bxv3wywxd8lc3" path="res://assets/sprites/items/power.png" id="2_btu7o"]
@@ -114,9 +114,6 @@ _data = {
 "pwvida": SubResource("Animation_2qx3f")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aijmf"]
-size = Vector2(10.5, 35.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk13b"]
 size = Vector2(27.25, 36.625)
 
@@ -135,11 +132,6 @@ libraries = {
 }
 autoplay = "PWagua"
 speed_scale = 0.308
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.75, -32.75)
-shape = SubResource("RectangleShape2D_aijmf")
-debug_color = Color(0.868092, 0.000534444, 0.855078, 0.42)
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -29,5 +29,6 @@ func actualizar_frame():
 	anim_pocion.frame = 10 - valor #Ajusta el frame en función del valor actual de marcador.
 
 func reiniciar_cansancio(): # Función utilizada al recoger un ítem de recuperación.
+	$pocion.play()#Reproduce sonido
 	marcador[0] = 10 #Reinicia el marcador al valor original (10).
 	actualizar_frame() # Actualiza la animación tras el reinicio del marcador.

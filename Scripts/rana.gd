@@ -14,6 +14,7 @@ func recibir_golpe():
 	muerto = true #Marco como true la muerte de rana
 	colision.set_deferred("disabled", true)  # Desactiva colisión
 	anima_rana.stop() #Paro la animaciuón de rana
+	$puntos.play()
 	anima_rana.play("puntos") #Da comienzo la animación de puntos
 	emit_signal("enemigo_muerto", 50) #Sumo 50 puntos al marcador
 	var tween = create_tween() 	# Creo tween para desvanecer puntos

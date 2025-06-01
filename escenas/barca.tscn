@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4oisw6k4od5j"]
+
+[ext_resource type="Script" path="res://Scripts/nube.gd" id="1_mhrst"]
+[ext_resource type="Texture2D" uid="uid://xhbujq6p6nae" path="res://assets/sprites/barca.png" id="2_texx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bofe"]
+size = Vector2(170, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77vec"]
+size = Vector2(3.42397, 12.5292)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ddcm"]
+size = Vector2(160, 7)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_mhrst")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_2bofe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11, -33)
+scale = Vector2(1.97688, 1.97688)
+texture = ExtResource("2_texx4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-81, -3.61562)
+scale = Vector2(1.97688, 1.97688)
+shape = SubResource("RectangleShape2D_77vec")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(86, -4)
+scale = Vector2(1.97688, 1.97688)
+shape = SubResource("RectangleShape2D_77vec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_5ddcm")
+one_way_collision = true
+debug_color = Color(0.810209, 0.286926, 0.744033, 0.42)

@@ -1,0 +1,179 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8q03253fj7l3"]
+
+[ext_resource type="Script" path="res://Scripts/presentacion_lv_2.gd" id="1_ig3b8"]
+[ext_resource type="Texture2D" uid="uid://oatx88odqaj1" path="res://assets/Presentacion/fondo.png" id="2_7msg2"]
+[ext_resource type="Texture2D" uid="uid://b2ryopmmgq77c" path="res://assets/Presentacion/logo.png" id="4_dhqv3"]
+[ext_resource type="Texture2D" uid="uid://c5ls8uurr0vm3" path="res://assets/sprites/pez2.png" id="4_s6y4c"]
+[ext_resource type="FontFile" uid="uid://dob7ob11ornpn" path="res://assets/fuente/SchoolBookNew-Regular.ttf" id="5_83plu"]
+
+[sub_resource type="Animation" id="Animation_ehe4i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2149, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1115, 549)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect/Pez2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2292, 739)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect/Label2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(89, -179)]
+}
+
+[sub_resource type="Animation" id="Animation_6di0u"]
+resource_name = "lv1"
+length = 0.4333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.4333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2149, 256), Vector2(1672, 256), Vector2(1672, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.4333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1115, 549), Vector2(120, 549), Vector2(120, 549)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect/Pez2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2292, 739), Vector2(-345, 739)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect/Label2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(134, -166), Vector2(134, 363), Vector2(134, 359)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtyyx"]
+_data = {
+"RESET": SubResource("Animation_ehe4i"),
+"lv1": SubResource("Animation_6di0u")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ig3b8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -35.0
+offset_top = -36.0
+offset_right = 1956.0
+offset_bottom = 1116.0
+texture = ExtResource("2_7msg2")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
+position = Vector2(2149, 256)
+scale = Vector2(0.132653, 0.132653)
+texture = ExtResource("4_dhqv3")
+
+[node name="Pez2" type="Sprite2D" parent="TextureRect"]
+modulate = Color(0, 0, 0, 0.247059)
+position = Vector2(2292, 739)
+scale = Vector2(22.2344, 22.2344)
+texture = ExtResource("4_s6y4c")
+hframes = 2
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 549.0
+offset_right = 1233.0
+offset_bottom = 1077.0
+theme_override_colors/font_color = Color(0.516322, 0.375567, 0.272224, 1)
+theme_override_fonts/font = ExtResource("5_83plu")
+theme_override_font_sizes/font_size = 134
+text = "The Little 
+Mermaid 
+Story"
+
+[node name="Label2" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 362.422
+offset_right = 674.0
+offset_bottom = 513.422
+theme_override_colors/font_color = Color(0.619608, 0.384314, 0, 1)
+theme_override_fonts/font = ExtResource("5_83plu")
+theme_override_font_sizes/font_size = 150
+text = "Level-2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rtyyx")
+}
+autoplay = "lv1"
+speed_scale = 0.063
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.7
+one_shot = true
+autostart = true

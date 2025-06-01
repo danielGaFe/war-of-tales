@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6sis54rblu2f"]
+
+[ext_resource type="Script" path="res://Scripts/nube_4.gd" id="1_m6gsw"]
+[ext_resource type="Texture2D" uid="uid://dclsfij0mdy4a" path="res://assets/escenarios/nubev4.png" id="2_e67s4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bofe"]
+size = Vector2(153, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ddcm"]
+size = Vector2(155, 7)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_m6gsw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, -42)
+shape = SubResource("RectangleShape2D_2bofe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.326667, 0.313333)
+texture = ExtResource("2_e67s4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -16)
+shape = SubResource("RectangleShape2D_5ddcm")
+one_way_collision = true
+debug_color = Color(0.810209, 0.286926, 0.744033, 0.42)

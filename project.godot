@@ -14,7 +14,7 @@ config/name="War of Tales"
 run/main_scene="res://escenas/menuPrincipal.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
-config/git_sha="aad912b0801a5e56c0019121d7a5a58e44a4072c"
+config/git_sha="64c0139034290434ed233fc7d87fb6814edd2e05"
 
 [autoload]
 
@@ -54,3 +54,4 @@ jump={
 textures/canvas_textures/default_texture_filter=3
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/hdr_2d=true

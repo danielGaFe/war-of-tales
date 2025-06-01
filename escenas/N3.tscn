@@ -1,0 +1,1521 @@
+[gd_scene load_steps=81 format=3 uid="uid://e1uw2pe8wwos"]
+
+[ext_resource type="Script" path="res://Scripts/n1.gd" id="1_khmmm"]
+[ext_resource type="PackedScene" uid="uid://c6pfy50hkcli4" path="res://escenas/marcador.tscn" id="2_gfnr8"]
+[ext_resource type="PackedScene" uid="uid://b15ycpeeiei8f" path="res://escenas/marcadorPuntos.tscn" id="3_4ju5d"]
+[ext_resource type="PackedScene" uid="uid://c1ujututco7ck" path="res://escenas/cansancio.tscn" id="4_mwklj"]
+[ext_resource type="Script" path="res://Scripts/cansancioN3.gd" id="5_tx88f"]
+[ext_resource type="Texture2D" uid="uid://du1tyk7qcqvtg" path="res://assets/escenarios/cielo.png" id="6_56iht"]
+[ext_resource type="PackedScene" uid="uid://ck3qnewmv275n" path="res://escenas/pez1.tscn" id="7_0p2rf"]
+[ext_resource type="PackedScene" uid="uid://k6rsem2wx0ho" path="res://escenas/cangrejo.tscn" id="8_icew3"]
+[ext_resource type="PackedScene" uid="uid://dn7lu1h60qyna" path="res://escenas/pajaro.tscn" id="9_cu67y"]
+[ext_resource type="PackedScene" uid="uid://cl8csxv73o3px" path="res://escenas/agua.tscn" id="12_haok0"]
+[ext_resource type="PackedScene" uid="uid://bbxlq5sgjha3m" path="res://escenas/isla1.tscn" id="16_blvlf"]
+[ext_resource type="Texture2D" uid="uid://ctu3yoa2ii44i" path="res://assets/escenarios/go.png" id="19_ljyj1"]
+[ext_resource type="PackedScene" uid="uid://cl1rpq0fcro3v" path="res://escenas/antorcha.tscn" id="19_vydnb"]
+[ext_resource type="PackedScene" uid="uid://l8dw62cnn10t" path="res://escenas/palmera.tscn" id="20_0cbgb"]
+[ext_resource type="PackedScene" uid="uid://b77kis1hhut3w" path="res://escenas/libro.tscn" id="21_6sr68"]
+[ext_resource type="AudioStream" uid="uid://dtmy0c1d5864b" path="res://assets/SONIDOS/marinero isleño.mp3" id="22_6wjw0"]
+[ext_resource type="AudioStream" uid="uid://ca0b6hqy25aeq" path="res://assets/SONIDOS/waves-hitting-the-rocks-16680.mp3" id="23_k2c53"]
+[ext_resource type="PackedScene" uid="uid://dojn2gcxife54" path="res://escenas/PuenteCae.tscn" id="24_06brj"]
+[ext_resource type="Texture2D" uid="uid://6xysovo23gpd" path="res://assets/tiles/provisional.png" id="26_sccg3"]
+[ext_resource type="Texture2D" uid="uid://dclsfij0mdy4a" path="res://assets/escenarios/nubev4.png" id="27_ceknm"]
+[ext_resource type="Texture2D" uid="uid://4i2hyojjcg6p" path="res://assets/tiles/nubes.png" id="27_hg3a8"]
+[ext_resource type="Texture2D" uid="uid://dugpkvhxstir5" path="res://assets/escenarios/fondo4.png" id="27_mnd7j"]
+[ext_resource type="Texture2D" uid="uid://bysyovfkjmq46" path="res://assets/tiles/nubes2.png" id="28_tojpd"]
+[ext_resource type="Texture2D" uid="uid://dxw6fldf3bkh" path="res://assets/tiles/ladrillos.png" id="29_3by88"]
+[ext_resource type="Texture2D" uid="uid://bqw13161bv3yd" path="res://assets/tiles/suelo2.png" id="30_827s1"]
+[ext_resource type="Texture2D" uid="uid://b7fpmy5qjchkn" path="res://assets/escenarios/barco.png" id="30_bpo58"]
+[ext_resource type="PackedScene" uid="uid://cqhjq35cwe5h3" path="res://escenas/pajaroInversa.tscn" id="31_6rua1"]
+[ext_resource type="PackedScene" uid="uid://bjp0fkdsc5kun" path="res://escenas/Player/Player.tscn" id="31_frwmj"]
+[ext_resource type="PackedScene" uid="uid://c4oisw6k4od5j" path="res://escenas/barca.tscn" id="32_ak40q"]
+[ext_resource type="PackedScene" uid="uid://c42f48hil3ihd" path="res://escenas/vidas.tscn" id="32_t1hsb"]
+[ext_resource type="Script" path="res://Scripts/camaraN1.gd" id="33_sipv6"]
+[ext_resource type="Script" path="res://Scripts/barca.gd" id="33_yvqhu"]
+[ext_resource type="Texture2D" uid="uid://dd804m8pp2nfb" path="res://assets/sprites/estatua.png" id="34_u2bru"]
+[ext_resource type="PackedScene" uid="uid://cnlnflacsu615" path="res://escenas/Portal_final_N3.tscn" id="35_ctjrk"]
+[ext_resource type="PackedScene" uid="uid://cdeo36hefinqf" path="res://escenas/powerVidaN3.tscn" id="36_hhs4o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ixs3v"]
+texture = ExtResource("26_sccg3")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycxrs"]
+texture = ExtResource("27_hg3a8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmukf"]
+texture = ExtResource("27_hg3a8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2a3rg"]
+texture = ExtResource("28_tojpd")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7glp3"]
+texture = ExtResource("29_3by88")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ke2a4"]
+texture = ExtResource("30_827s1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_56oc1"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ixs3v")
+sources/6 = SubResource("TileSetAtlasSource_ke2a4")
+sources/1 = SubResource("TileSetAtlasSource_ycxrs")
+sources/2 = SubResource("TileSetAtlasSource_fmukf")
+sources/3 = SubResource("TileSetAtlasSource_2a3rg")
+sources/4 = SubResource("TileSetAtlasSource_7glp3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw3u3"]
+size = Vector2(674, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uf85r"]
+size = Vector2(115.009, 309.646)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6afc"]
+size = Vector2(281, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clcvq"]
+size = Vector2(406.75, 33.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vigc3"]
+size = Vector2(570.25, 59.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2bg1"]
+size = Vector2(270.75, 195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_415mm"]
+size = Vector2(586.5, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbnqc"]
+size = Vector2(59.5, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjxam"]
+size = Vector2(58.25, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s38c7"]
+size = Vector2(410.5, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v768r"]
+size = Vector2(799, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2cw7"]
+size = Vector2(218, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eot18"]
+size = Vector2(199, 21.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqvlv"]
+size = Vector2(358, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cl0d"]
+size = Vector2(281.5, 18.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhe7e"]
+size = Vector2(281, 25.5)
+
+[sub_resource type="Curve2D" id="Curve2D_m44vf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -84.9791, -178.406, 0, 0, 0, 0, -57.0142, -177.47, 0, 0, 0, 0, 89.5078, -177.782, 0, 0, 0, 0, 406.639, -177.938, 0, 0, 0, 0, 1151.47, -179.967)
+}
+point_count = 5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sxd0g"]
+resource_local_to_scene = true
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Animation" id="Animation_inelu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3588, -147)]
+}
+
+[sub_resource type="Animation" id="Animation_ebl2y"]
+resource_name = "new_animation"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3588, -147), Vector2(3588, -141), Vector2(3588, -146.143)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q344w"]
+_data = {
+"RESET": SubResource("Animation_inelu"),
+"new_animation": SubResource("Animation_ebl2y")
+}
+
+[sub_resource type="Animation" id="Animation_3pyfn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(685, -86)]
+}
+
+[sub_resource type="Animation" id="Animation_po72p"]
+resource_name = "new_animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(685, -86), Vector2(-864, -86)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbffr"]
+_data = {
+"RESET": SubResource("Animation_3pyfn"),
+"new_animation": SubResource("Animation_po72p")
+}
+
+[sub_resource type="Animation" id="Animation_8wgma"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4449, 37)]
+}
+
+[sub_resource type="Animation" id="Animation_adbsk"]
+resource_name = "new_animation"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4449, 37), Vector2(10148, 37)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cnp5q"]
+_data = {
+"RESET": SubResource("Animation_8wgma"),
+"new_animation": SubResource("Animation_adbsk")
+}
+
+[sub_resource type="Animation" id="Animation_f4qcs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1337, -141)]
+}
+
+[sub_resource type="Animation" id="Animation_3iwbo"]
+resource_name = "new_animation"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1337, -141), Vector2(1139, -141)]
+}
+
+[sub_resource type="Animation" id="Animation_kq4a6"]
+resource_name = "new_animation_2"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4129, -98), Vector2(2913, -98)]
+}
+
+[sub_resource type="Animation" id="Animation_hq7p1"]
+resource_name = "new_animation_3"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(19.8667, 59.7667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8593, -117), Vector2(6217, -117)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_alfma"]
+_data = {
+"RESET": SubResource("Animation_f4qcs"),
+"new_animation": SubResource("Animation_3iwbo"),
+"new_animation_2": SubResource("Animation_kq4a6"),
+"new_animation_3": SubResource("Animation_hq7p1")
+}
+
+[sub_resource type="Animation" id="Animation_1vixm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5324, -300)]
+}
+
+[sub_resource type="Animation" id="Animation_opqhb"]
+resource_name = "new_animation"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4545, -183), Vector2(-1332, -183)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sccim"]
+_data = {
+"RESET": SubResource("Animation_1vixm"),
+"new_animation": SubResource("Animation_opqhb")
+}
+
+[sub_resource type="Animation" id="Animation_12m7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1446, -338)]
+}
+
+[sub_resource type="Animation" id="Animation_n1hgd"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1446, -338), Vector2(-890, -338)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqwjr"]
+_data = {
+"RESET": SubResource("Animation_12m7a"),
+"new_animation": SubResource("Animation_n1hgd")
+}
+
+[node name="NIVEL3" type="Node2D"]
+position = Vector2(150, -112)
+script = ExtResource("1_khmmm")
+
+[node name="Node2D2" parent="." instance=ExtResource("2_gfnr8")]
+
+[node name="Marcador" parent="." instance=ExtResource("3_4ju5d")]
+
+[node name="Cansancio" parent="." instance=ExtResource("4_mwklj")]
+script = ExtResource("5_tx88f")
+
+[node name="TilemapLayers" type="Node2D" parent="."]
+position = Vector2(270, 13)
+
+[node name="Fondo" type="TileMapLayer" parent="TilemapLayers"]
+
+[node name="Entorno" type="TileMapLayer" parent="TilemapLayers"]
+tile_set = SubResource("TileSet_56oc1")
+
+[node name="Agua" parent="TilemapLayers/Entorno" instance=ExtResource("12_haok0")]
+z_index = 2
+position = Vector2(77, 70)
+
+[node name="Node2D" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-470, 0)
+
+[node name="Node2D8" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-564, 0)
+
+[node name="Node2D11" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-658, 0)
+
+[node name="Node2D12" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-752, 0)
+
+[node name="Node2D13" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-376, 0)
+
+[node name="Node2D14" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-282, 0)
+
+[node name="Node2D15" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-188, 0)
+
+[node name="Node2D16" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-94, 0)
+
+[node name="Node2D" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1313, 0)
+
+[node name="Node2D" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1313, 0)
+
+[node name="Node2D8" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1219, 0)
+
+[node name="Node2D11" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1125, 0)
+
+[node name="Node2D12" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1031, 0)
+
+[node name="Node2D13" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1407, 0)
+
+[node name="Node2D14" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1501, 0)
+
+[node name="Node2D15" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1595, 0)
+
+[node name="Node2D16" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1689, 0)
+
+[node name="Node2D17" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(1783, 0)
+
+[node name="Node2D9" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(375, 0)
+
+[node name="Node2D10" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(281, 0)
+
+[node name="Node2D2" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(468, 0)
+
+[node name="Node2D3" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(561, -1)
+
+[node name="Node2D4" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(656, 0)
+
+[node name="Node2D5" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(750, 0)
+
+[node name="Node2D6" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(937, 0)
+
+[node name="Node2D7" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D" instance=ExtResource("12_haok0")]
+position = Vector2(844, 0)
+
+[node name="Node2D" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1313, 0)
+
+[node name="Node2D8" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1219, 0)
+
+[node name="Node2D11" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1125, 0)
+
+[node name="Node2D12" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1031, 0)
+
+[node name="Node2D13" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1407, 0)
+
+[node name="Node2D14" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1501, 0)
+
+[node name="Node2D15" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1595, 0)
+
+[node name="Node2D16" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1689, 0)
+
+[node name="Node2D17" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1783, 0)
+
+[node name="Node2D9" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(375, 0)
+
+[node name="Node2D10" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(281, 0)
+
+[node name="Node2D2" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(468, 0)
+
+[node name="Node2D3" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(561, -1)
+
+[node name="Node2D4" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(656, 0)
+
+[node name="Node2D5" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(750, 0)
+
+[node name="Node2D6" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(937, 0)
+
+[node name="Node2D7" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(844, 0)
+
+[node name="Node2D18" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(2158, -1)
+
+[node name="Node2D18" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18" instance=ExtResource("12_haok0")]
+position = Vector2(845, 0)
+
+[node name="Node2D19" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18" instance=ExtResource("12_haok0")]
+position = Vector2(751, 0)
+
+[node name="Node2D20" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18" instance=ExtResource("12_haok0")]
+position = Vector2(657, 0)
+
+[node name="Node2D22" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18" instance=ExtResource("12_haok0")]
+position = Vector2(939, 0)
+
+[node name="Node2D23" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18" instance=ExtResource("12_haok0")]
+position = Vector2(1033, 0)
+
+[node name="Node2D24" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18" instance=ExtResource("12_haok0")]
+position = Vector2(1127, 0)
+
+[node name="Node2D26" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18" instance=ExtResource("12_haok0")]
+position = Vector2(1315, 0)
+
+[node name="Node2D18" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(375, 0)
+
+[node name="Node2D19" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(281, 0)
+
+[node name="Node2D20" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(187, 0)
+
+[node name="Node2D21" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(93, 0)
+
+[node name="Node2D22" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(469, 0)
+
+[node name="Node2D23" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(563, 0)
+
+[node name="Node2D25" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(751, 0)
+
+[node name="Node2D26" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(845, 0)
+
+[node name="Node2D18" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(375, 0)
+
+[node name="Node2D19" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(281, 0)
+
+[node name="Node2D20" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(187, 0)
+
+[node name="Node2D21" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(93, 0)
+
+[node name="Node2D22" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(469, 0)
+
+[node name="Node2D23" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(563, 0)
+
+[node name="Node2D24" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(657, 0)
+
+[node name="Node2D25" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(751, 0)
+
+[node name="Node2D26" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(845, 0)
+
+[node name="Node2D18" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(375, 0)
+
+[node name="Node2D19" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(281, 0)
+
+[node name="Node2D20" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(187, 0)
+
+[node name="Node2D21" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(93, 0)
+
+[node name="Node2D22" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(469, 0)
+
+[node name="Node2D23" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(563, 0)
+
+[node name="Node2D24" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(657, 0)
+
+[node name="Node2D25" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(751, 0)
+
+[node name="Node2D26" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(845, 0)
+
+[node name="Node2D18" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(375, 0)
+
+[node name="Node2D19" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(281, 0)
+
+[node name="Node2D20" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(187, 0)
+
+[node name="Node2D21" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(93, 0)
+
+[node name="Node2D22" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(469, 0)
+
+[node name="Node2D23" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(563, 0)
+
+[node name="Node2D24" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(657, 0)
+
+[node name="Node2D25" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(751, 0)
+
+[node name="Node2D26" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(845, 0)
+
+[node name="Node2D18" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(376, 0)
+
+[node name="Node2D19" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(282, 0)
+
+[node name="Node2D20" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(188, 0)
+
+[node name="Node2D21" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(94, 0)
+
+[node name="Node2D22" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(470, 0)
+
+[node name="Node2D23" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(564, 0)
+
+[node name="Node2D24" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(658, 0)
+
+[node name="Node2D25" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(752, 0)
+
+[node name="Node2D26" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7/Node2D18/Node2D26/Node2D26/Node2D26/Node2D26/Node2D26" instance=ExtResource("12_haok0")]
+position = Vector2(846, 0)
+
+[node name="Node2D19" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(2064, -1)
+
+[node name="Node2D20" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1970, -1)
+
+[node name="Node2D21" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1876, -1)
+
+[node name="Node2D22" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(2252, -1)
+
+[node name="Node2D23" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(2346, -1)
+
+[node name="Node2D24" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(2440, -1)
+
+[node name="Node2D27" parent="TilemapLayers/Entorno/Agua/Node2D16/Node2D/Node2D7" instance=ExtResource("12_haok0")]
+position = Vector2(1220, -1)
+
+[node name="Node2D8" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1219, 0)
+
+[node name="Node2D11" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1125, 0)
+
+[node name="Node2D12" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1031, 0)
+
+[node name="Node2D13" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1407, 0)
+
+[node name="Node2D14" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1501, 0)
+
+[node name="Node2D15" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1595, 0)
+
+[node name="Node2D16" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1689, 0)
+
+[node name="Node2D17" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(1783, 0)
+
+[node name="Node2D9" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(375, 0)
+
+[node name="Node2D10" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(281, 0)
+
+[node name="Node2D2" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(468, 0)
+
+[node name="Node2D3" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(561, -1)
+
+[node name="Node2D4" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(656, 0)
+
+[node name="Node2D5" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(750, 0)
+
+[node name="Node2D6" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(937, 0)
+
+[node name="Node2D7" parent="TilemapLayers/Entorno/Agua/Node2D16" instance=ExtResource("12_haok0")]
+position = Vector2(844, 0)
+
+[node name="Node2D17" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(93, 0)
+
+[node name="Node2D9" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-1408, 0)
+
+[node name="Node2D10" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-1502, 0)
+
+[node name="Node2D2" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-1315, 0)
+
+[node name="Node2D3" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-1221, 0)
+
+[node name="Node2D4" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-1127, 0)
+
+[node name="Node2D5" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-1033, 0)
+
+[node name="Node2D6" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-846, 0)
+
+[node name="Node2D7" parent="TilemapLayers/Entorno/Agua" instance=ExtResource("12_haok0")]
+position = Vector2(-939, 0)
+
+[node name="Suelo" type="StaticBody2D" parent="TilemapLayers/Entorno"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(-39, 25)
+shape = SubResource("RectangleShape2D_qw3u3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(598.22, 17.5)
+rotation = -1.58301
+skew = 0.0122175
+shape = SubResource("RectangleShape2D_uf85r")
+debug_color = Color(0.924775, 4.42803e-05, 0.678753, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+z_index = 1
+position = Vector2(1266.5, -22)
+shape = SubResource("RectangleShape2D_k6afc")
+debug_color = Color(0.909335, 0.265106, 0.360163, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+z_index = 1
+position = Vector2(1720, -100)
+shape = SubResource("RectangleShape2D_clcvq")
+debug_color = Color(0.89237, 0.147023, 0.704134, 0.42)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(2285.88, -158.375)
+shape = SubResource("RectangleShape2D_vigc3")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+z_index = 3
+position = Vector2(2787, -56)
+shape = SubResource("RectangleShape2D_o2bg1")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(3111.75, -285.75)
+shape = SubResource("RectangleShape2D_415mm")
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(3353, -324)
+shape = SubResource("RectangleShape2D_jbnqc")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(2784.88, -183)
+shape = SubResource("RectangleShape2D_bjxam")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(3115.75, -399.5)
+shape = SubResource("RectangleShape2D_s38c7")
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(3356.5, -26)
+shape = SubResource("RectangleShape2D_v768r")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(3883, -100.5)
+shape = SubResource("RectangleShape2D_y2cw7")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(4537, -33)
+shape = SubResource("RectangleShape2D_eot18")
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(5099, -28.5)
+shape = SubResource("RectangleShape2D_wqvlv")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(6660.25, 8.75)
+shape = SubResource("RectangleShape2D_3cl0d")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(7581.5, 6.25)
+shape = SubResource("RectangleShape2D_rhe7e")
+
+[node name="Player_Idle" parent="." instance=ExtResource("31_frwmj")]
+position = Vector2(-26, -19)
+metadata/_edit_group_ = true
+
+[node name="Vidas" parent="Player_Idle" groups=["Vidas"] instance=ExtResource("32_t1hsb")]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(421.229, 954.19)
+scale = Vector2(8.51067, 6.40778)
+curve = SubResource("Curve2D_m44vf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-84.9791, -178.406)
+rotation = 0.0334582
+cubic_interp = false
+loop = false
+script = ExtResource("33_sipv6")
+velocidad = 15.0
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
+zoom = Vector2(1.7, 1.7)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_6wjw0")
+volume_db = 6.209
+autoplay = true
+max_distance = 90000.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(47, -59)
+stream = ExtResource("23_k2c53")
+volume_db = 4.689
+autoplay = true
+max_distance = 90000.0
+
+[node name="Cielo" type="Sprite2D" parent="."]
+modulate = Color(0.603342, 0.0908024, 0.588542, 1)
+z_index = -3
+material = SubResource("CanvasItemMaterial_sxd0g")
+position = Vector2(7377.18, -621)
+scale = Vector2(603.699, 62.1406)
+texture = ExtResource("6_56iht")
+
+[node name="Barco" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3588, -147)
+scale = Vector2(1.388, 1.336)
+texture = ExtResource("30_bpo58")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Barco"]
+libraries = {
+"": SubResource("AnimationLibrary_q344w")
+}
+autoplay = "new_animation"
+speed_scale = 1.519
+
+[node name="Barco2" type="Sprite2D" parent="."]
+modulate = Color(0.226707, 0.226707, 0.226707, 1)
+z_index = -2
+position = Vector2(685, -86)
+texture = ExtResource("30_bpo58")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Barco2"]
+libraries = {
+"": SubResource("AnimationLibrary_tbffr")
+}
+autoplay = "new_animation"
+
+[node name="barca" parent="." instance=ExtResource("32_ak40q")]
+position = Vector2(4449, 37)
+script = ExtResource("33_yvqhu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="barca"]
+libraries = {
+"": SubResource("AnimationLibrary_cnp5q")
+}
+speed_scale = 0.445
+
+[node name="Portal_fin_nivel" parent="." instance=ExtResource("35_ctjrk")]
+position = Vector2(9484, 27)
+
+[node name="POWER-VIDA" type="Node" parent="."]
+
+[node name="Node2D60" parent="POWER-VIDA" instance=ExtResource("36_hhs4o")]
+position = Vector2(1388, -131)
+
+[node name="Node2D61" parent="POWER-VIDA" instance=ExtResource("36_hhs4o")]
+position = Vector2(3451, -498)
+
+[node name="Node2D11" parent="POWER-VIDA" instance=ExtResource("36_hhs4o")]
+position = Vector2(5006, -133)
+
+[node name="Node2D12" parent="POWER-VIDA" instance=ExtResource("36_hhs4o")]
+position = Vector2(7505, -93)
+
+[node name="Node2D13" parent="POWER-VIDA" instance=ExtResource("36_hhs4o")]
+position = Vector2(9517, -42)
+
+[node name="Palmeras" type="Node" parent="."]
+
+[node name="Node2D8" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+modulate = Color(0.762404, 0.762404, 0.762404, 1)
+z_index = -1
+position = Vector2(92, -292)
+
+[node name="Node2D7" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(291, -298)
+
+[node name="Node2D6" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+position = Vector2(198, -283)
+
+[node name="Node2D9" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+modulate = Color(0.762404, 0.762404, 0.762404, 1)
+z_index = -1
+position = Vector2(1124, -331)
+
+[node name="Node2D26" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(1776, -338)
+
+[node name="Node2D12" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(2106, -407)
+
+[node name="Node2D24" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(2556, -483)
+
+[node name="Node2D25" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(2879, -477)
+
+[node name="Node2D27" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(4897, -331)
+
+[node name="Node2D11" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(5500, -333)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="Node2D10" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(5430, -343)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="Node2D13" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(5554, -341)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="Node2D45" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(7032, -291)
+
+[node name="Node2D46" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(7938, -297)
+
+[node name="Node2D47" parent="Palmeras" instance=ExtResource("20_0cbgb")]
+z_index = -1
+position = Vector2(8122, -297)
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="cangrejo2" parent="Enemigos" instance=ExtResource("8_icew3")]
+position = Vector2(3528, -404)
+limite_izquierdo = 10.0
+limite_derecho = 10.0
+
+[node name="cangrejo8" parent="Enemigos" instance=ExtResource("8_icew3")]
+position = Vector2(7090, -114)
+rango = 35.0
+
+[node name="cangrejo9" parent="Enemigos" instance=ExtResource("8_icew3")]
+position = Vector2(8010, -119)
+rango = 35.0
+
+[node name="cangrejo6" parent="Enemigos" instance=ExtResource("8_icew3")]
+position = Vector2(3205, -269)
+rango = 50.0
+
+[node name="cangrejo" parent="Enemigos" instance=ExtResource("8_icew3")]
+z_index = 2
+position = Vector2(1016, -156)
+scale = Vector2(1.03722, 1.03722)
+rango = 23.0
+
+[node name="cangrejo3" parent="Enemigos" instance=ExtResource("8_icew3")]
+z_index = 1
+position = Vector2(1684, -163)
+scale = Vector2(1.03722, 1.03722)
+rango = 25.0
+
+[node name="cangrejo4" parent="Enemigos" instance=ExtResource("8_icew3")]
+position = Vector2(5520, -145)
+scale = Vector2(1.03722, 1.03722)
+rango = 18.0
+
+[node name="cangrejo5" parent="Enemigos" instance=ExtResource("8_icew3")]
+z_index = 2
+position = Vector2(4293, -229)
+scale = Vector2(1.03722, 1.03722)
+rango = 30.0
+
+[node name="cangrejo7" parent="Enemigos" instance=ExtResource("8_icew3")]
+z_index = 2
+position = Vector2(3625, -521)
+scale = Vector2(1.03722, 1.03722)
+rango = 30.0
+
+[node name="cangrejo10" parent="Enemigos" instance=ExtResource("8_icew3")]
+position = Vector2(556, -121)
+limite_izquierdo = 0.0
+limite_derecho = 50.0
+
+[node name="cangrejo11" parent="Enemigos" instance=ExtResource("8_icew3")]
+position = Vector2(3854, -197)
+
+[node name="cangrejo12" parent="Enemigos" instance=ExtResource("8_icew3")]
+z_index = 2
+position = Vector2(2710, -300)
+
+[node name="cangrejo13" parent="Enemigos" instance=ExtResource("8_icew3")]
+z_index = 1
+position = Vector2(2151, -228)
+rango = 100.0
+
+[node name="cangrejo14" parent="Enemigos" instance=ExtResource("8_icew3")]
+position = Vector2(4943, -152)
+rango = 20.0
+
+[node name="pajaro1" parent="Enemigos" instance=ExtResource("31_6rua1")]
+z_index = 3
+position = Vector2(27, -579)
+
+[node name="pajaro2" parent="Enemigos" instance=ExtResource("31_6rua1")]
+z_index = 3
+position = Vector2(98, -546)
+
+[node name="pajaro3" parent="Enemigos" instance=ExtResource("31_6rua1")]
+z_index = 3
+position = Vector2(168, -499)
+
+[node name="pajaro4" parent="Enemigos" instance=ExtResource("31_6rua1")]
+position = Vector2(224, -452)
+
+[node name="Pez1" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(797, -109)
+
+[node name="pez2" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(1882, -137)
+scale = Vector2(1.2, 1.2)
+
+[node name="pez8" parent="Enemigos" instance=ExtResource("12_haok0")]
+position = Vector2(5281, -30)
+
+[node name="pez9" parent="Enemigos" instance=ExtResource("12_haok0")]
+position = Vector2(5939, -30)
+
+[node name="pez12" parent="Enemigos" instance=ExtResource("12_haok0")]
+position = Vector2(6690, -30)
+
+[node name="pez5" parent="Enemigos" instance=ExtResource("12_haok0")]
+position = Vector2(5094, -30)
+
+[node name="pez7" parent="Enemigos" instance=ExtResource("12_haok0")]
+position = Vector2(5188, -30)
+
+[node name="pez6" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+z_index = 1
+position = Vector2(5187, -129)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pez10" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(6249, -99)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pez11" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(6493, -99)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pez3" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(4483, -100)
+
+[node name="pez4" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(4784, -99)
+
+[node name="pez13" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(4953, -100)
+
+[node name="pez14" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(7377, -98)
+
+[node name="pez15" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(7620, -101)
+
+[node name="pez16" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(9385, -99)
+
+[node name="pez17" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(9423, -99)
+
+[node name="pez18" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(9460, -99)
+
+[node name="pez19" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(9347, -99)
+
+[node name="pajaro6" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(11973, -124)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro7" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(12061, -175)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro8" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(12133, -132)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro9" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(12218, -171)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro10" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(12290, -131)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro11" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(12363, -172)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro12" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(12427, -135)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro13" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(12493, -172)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro14" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(12557, -135)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro5" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(11902, -172)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pajaro15" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(14401, -122)
+
+[node name="pajaro16" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(14463, -123)
+
+[node name="pajaro17" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(14523, -123)
+
+[node name="pajaro18" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(14583, -123)
+
+[node name="pajaro19" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(14643, -123)
+
+[node name="pajaro20" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(14702, -125)
+
+[node name="pajaro21" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(14761, -125)
+
+[node name="pez20" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(5949, -100)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pez24" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+position = Vector2(6701, -99)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pez25" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+z_index = 1
+position = Vector2(5271, -128)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="pex26" parent="Enemigos" instance=ExtResource("7_0p2rf")]
+z_index = 1
+position = Vector2(5101, -130)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="Node2D" parent="Enemigos" instance=ExtResource("9_cu67y")]
+position = Vector2(2268, -185)
+
+[node name="Islas" type="Node" parent="."]
+
+[node name="Isla1" parent="Islas" instance=ExtResource("16_blvlf")]
+z_index = -1
+position = Vector2(185, -134)
+
+[node name="Isla2" parent="Islas" instance=ExtResource("16_blvlf")]
+z_index = -1
+position = Vector2(429, -139)
+
+[node name="Isla3" parent="Islas" instance=ExtResource("16_blvlf")]
+z_index = -1
+position = Vector2(576, -139)
+
+[node name="Isla4" parent="Islas" instance=ExtResource("16_blvlf")]
+position = Vector2(1018, -171)
+
+[node name="Isla6" type="Sprite2D" parent="Islas"]
+z_index = -1
+position = Vector2(4958, -41)
+scale = Vector2(0.498436, 0.498436)
+texture = ExtResource("27_mnd7j")
+
+[node name="Isla5" type="Sprite2D" parent="Islas"]
+position = Vector2(1685, -3)
+scale = Vector2(0.706, 0.706)
+texture = ExtResource("27_mnd7j")
+
+[node name="IslaFondo1" type="Sprite2D" parent="Islas"]
+modulate = Color(1, 0.77481, 0.714664, 1)
+z_index = -2
+position = Vector2(1337, -141)
+scale = Vector2(2.408, 2.408)
+texture = ExtResource("27_mnd7j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Islas/IslaFondo1"]
+libraries = {
+"": SubResource("AnimationLibrary_alfma")
+}
+autoplay = "new_animation_3"
+
+[node name="Fondo7" type="Sprite2D" parent="Islas"]
+z_index = -1
+position = Vector2(2706, 1.23978e-05)
+scale = Vector2(1.39591, 1.39591)
+texture = ExtResource("27_mnd7j")
+
+[node name="Fondo8" type="Sprite2D" parent="Islas"]
+z_index = -1
+position = Vector2(5518, 39)
+scale = Vector2(0.919956, 0.919956)
+texture = ExtResource("27_mnd7j")
+
+[node name="Fondo6" type="Sprite2D" parent="Islas"]
+z_index = -2
+position = Vector2(2145, -5)
+scale = Vector2(1.03722, 1.03722)
+texture = ExtResource("27_mnd7j")
+
+[node name="Isla7" parent="Islas" instance=ExtResource("16_blvlf")]
+position = Vector2(7080, -131)
+
+[node name="Isla8" parent="Islas" instance=ExtResource("16_blvlf")]
+position = Vector2(8002, -136)
+
+[node name="isla10" parent="Islas" instance=ExtResource("16_blvlf")]
+z_index = -1
+position = Vector2(1017, -138)
+
+[node name="Fondo9" type="Sprite2D" parent="Islas"]
+modulate = Color(1, 0.77481, 0.714664, 1)
+z_index = -2
+position = Vector2(1337, -141)
+scale = Vector2(2.408, 2.408)
+texture = ExtResource("27_mnd7j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Islas/Fondo9"]
+root_node = NodePath("../../Fondo9")
+libraries = {
+"": SubResource("AnimationLibrary_alfma")
+}
+autoplay = "new_animation_2"
+
+[node name="Puentes" type="Node" parent="."]
+
+[node name="puente" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(1360, -103)
+
+[node name="puente2" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(1412, -107)
+
+[node name="puente3" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(1466, -112)
+
+[node name="puente4" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(1519, -120)
+
+[node name="puente5" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(1203, -117)
+
+[node name="puente6" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(1255, -108)
+
+[node name="puente7" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(1308, -103)
+
+[node name="puente8" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7248, -78)
+
+[node name="puente9" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7300, -78)
+
+[node name="puente10" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7352, -78)
+
+[node name="puente11" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7404, -78)
+
+[node name="puente12" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7456, -78)
+
+[node name="puente13" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7508, -78)
+
+[node name="puente14" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7560, -78)
+
+[node name="puente15" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7612, -78)
+
+[node name="puente16" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7664, -78)
+
+[node name="puente17" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7716, -78)
+
+[node name="puente18" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7768, -78)
+
+[node name="puente19" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(7821, -78)
+
+[node name="Puente" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(5081, -119)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="puente20" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(5137, -110)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="puente21" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(5196, -102)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="puente22" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(5253, -110)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="puente23" parent="Puentes" instance=ExtResource("24_06brj")]
+position = Vector2(5310, -116)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="Libros" type="Node" parent="."]
+
+[node name="Libro" parent="Libros" instance=ExtResource("21_6sr68")]
+position = Vector2(1088, -221)
+
+[node name="Libro2" parent="Libros" instance=ExtResource("21_6sr68")]
+position = Vector2(4156, -226)
+
+[node name="Libro3" parent="Libros" instance=ExtResource("21_6sr68")]
+position = Vector2(7194, -177)
+
+[node name="Libro4" parent="Libros" instance=ExtResource("21_6sr68")]
+position = Vector2(5632.85, -192.186)
+scale = Vector2(1.03722, 1.03722)
+
+[node name="Decoracion" type="Node" parent="."]
+
+[node name="Antorcha1" parent="Decoracion" instance=ExtResource("19_vydnb")]
+position = Vector2(2929, -305)
+scale = Vector2(0.5, 0.5)
+
+[node name="Antorcha2" parent="Decoracion" instance=ExtResource("19_vydnb")]
+position = Vector2(2486, -312)
+scale = Vector2(0.5, 0.5)
+
+[node name="Antorcha3" parent="Decoracion" instance=ExtResource("19_vydnb")]
+position = Vector2(2316, -239)
+scale = Vector2(0.5, 0.5)
+
+[node name="Estatua" type="Sprite2D" parent="Decoracion"]
+modulate = Color(0.868985, 0.868985, 0.868985, 1)
+z_index = -1
+position = Vector2(967, -232)
+scale = Vector2(1.96, 1.96)
+texture = ExtResource("34_u2bru")
+
+[node name="Nubev4" type="Sprite2D" parent="Decoracion"]
+z_index = -3
+position = Vector2(5324, -300)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_ceknm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decoracion/Nubev4"]
+libraries = {
+"": SubResource("AnimationLibrary_sccim")
+}
+autoplay = "new_animation"
+speed_scale = 0.63
+
+[node name="Go" type="Sprite2D" parent="Decoracion"]
+z_index = -1
+position = Vector2(373, -136)
+scale = Vector2(1.84375, 1.84375)
+texture = ExtResource("19_ljyj1")
+
+[node name="antorcha5" parent="Decoracion" instance=ExtResource("19_vydnb")]
+z_index = 1
+position = Vector2(1562, -180)
+scale = Vector2(0.506667, 0.506667)
+
+[node name="antorcha6" parent="Decoracion" instance=ExtResource("19_vydnb")]
+z_index = 1
+position = Vector2(1152, -171)
+scale = Vector2(0.506667, 0.506667)
+
+[node name="Nubev5" type="Sprite2D" parent="Decoracion"]
+z_index = -2
+position = Vector2(1446, -338)
+scale = Vector2(0.506667, 0.506667)
+texture = ExtResource("27_ceknm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Decoracion/Nubev5"]
+root_node = NodePath("../../Nubev5")
+libraries = {
+"": SubResource("AnimationLibrary_xqwjr")
+}
+autoplay = "new_animation"
+speed_scale = 0.222
+
+[node name="Nubev6" type="Sprite2D" parent="Decoracion"]
+position = Vector2(468, -504)
+scale = Vector2(0.226667, 0.226667)
+texture = ExtResource("27_ceknm")
+
+[editable path="TilemapLayers/Entorno/Agua"]

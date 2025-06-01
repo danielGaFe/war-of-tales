@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://cnlnflacsu615"]
+
+[ext_resource type="Script" path="res://Scripts/portal_finaln3.gd" id="1_y830g"]
+[ext_resource type="Texture2D" uid="uid://cpjycl6mjxrun" path="res://assets/sprites/items/next_story.png" id="2_wqyi2"]
+[ext_resource type="AudioStream" uid="uid://xnqtgs858rn2" path="res://assets/SONIDOS/the-portal-90750.mp3" id="3_cu7sk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i41tq"]
+atlas = ExtResource("2_wqyi2")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3wlj"]
+atlas = ExtResource("2_wqyi2")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbh6a"]
+atlas = ExtResource("2_wqyi2")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7co8r"]
+atlas = ExtResource("2_wqyi2")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpodj"]
+atlas = ExtResource("2_wqyi2")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq2b5"]
+atlas = ExtResource("2_wqyi2")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvjbu"]
+atlas = ExtResource("2_wqyi2")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gw6je"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i41tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3wlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbh6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7co8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpodj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq2b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvjbu")
+}],
+"loop": true,
+"name": &"finalBoss",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umdjr"]
+radius = 70.0071
+
+[node name="CharacterBody2D" type="Area2D"]
+z_index = -1
+script = ExtResource("1_y830g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.741176)
+scale = Vector2(2.39, 2.39)
+sprite_frames = SubResource("SpriteFrames_gw6je")
+animation = &"finalBoss"
+frame_progress = 0.891339
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_umdjr")
+
+[node name="sonido" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cu7sk")
+volume_db = 0.854

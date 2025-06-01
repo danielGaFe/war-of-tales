@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://l8dw62cnn10t"]
+
+[ext_resource type="Texture2D" uid="uid://cp6eg6i4npiey" path="res://assets/escenarios/palmera.png" id="1_xoyht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6t01"]
+atlas = ExtResource("1_xoyht")
+region = Rect2(0, 0, 100, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1nxh"]
+atlas = ExtResource("1_xoyht")
+region = Rect2(100, 0, 100, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trhaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6t01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1nxh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.00001, -7.62939e-06)
+scale = Vector2(2.41, 2.41)
+sprite_frames = SubResource("SpriteFrames_trhaf")
+autoplay = "default"
+frame = 1
+frame_progress = 0.745672

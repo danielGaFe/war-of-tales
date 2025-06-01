@@ -1,9 +1,9 @@
-[gd_scene load_steps=52 format=4 uid="uid://bx1evhelgh8jx"]
+[gd_scene load_steps=78 format=4 uid="uid://bx1evhelgh8jx"]
 
 [ext_resource type="Texture2D" uid="uid://du1tyk7qcqvtg" path="res://assets/escenarios/cielo.png" id="1_d40od"]
 [ext_resource type="PackedScene" uid="uid://bjp0fkdsc5kun" path="res://escenas/Player/Player.tscn" id="1_e1sbd"]
 [ext_resource type="PackedScene" uid="uid://b15ycpeeiei8f" path="res://escenas/marcadorPuntos.tscn" id="1_fq3it"]
-[ext_resource type="Script" path="res://Scripts/n1.gd" id="1_ifna7"]
+[ext_resource type="Script" path="res://Scripts/n1.gd" id="1_o7t78"]
 [ext_resource type="Texture2D" uid="uid://6xysovo23gpd" path="res://assets/tiles/provisional.png" id="2_2eosf"]
 [ext_resource type="Texture2D" uid="uid://c5ljvos2aitye" path="res://assets/escenarios/fondo3.png" id="2_c336r"]
 [ext_resource type="Texture2D" uid="uid://btn6eo1cq5pu6" path="res://assets/escenarios/fondo2.png" id="2_fu5vf"]
@@ -11,18 +11,18 @@
 [ext_resource type="Script" path="res://Scripts/camaraN1.gd" id="3_amyhw"]
 [ext_resource type="PackedScene" uid="uid://c42f48hil3ihd" path="res://escenas/vidas.tscn" id="3_nh1pu"]
 [ext_resource type="PackedScene" uid="uid://c1ujututco7ck" path="res://escenas/cansancio.tscn" id="4_f1gki"]
-[ext_resource type="PackedScene" uid="uid://bfnti7tkgisar" path="res://escenas/Proyectil1.tscn" id="4_ko24r"]
 [ext_resource type="Texture2D" uid="uid://bqw13161bv3yd" path="res://assets/tiles/suelo2.png" id="4_ohx42"]
 [ext_resource type="Texture2D" uid="uid://c8u4mdlu6l6ve" path="res://assets/escenarios/casa1.png" id="5_qxs7v"]
+[ext_resource type="Script" path="res://Scripts/cielo.gd" id="5_yqjr2"]
 [ext_resource type="PackedScene" uid="uid://2sp2lo2p338y" path="res://escenas/mosquito.tscn" id="8_5pi6u"]
 [ext_resource type="PackedScene" uid="uid://duqkhfjskoyw3" path="res://escenas/rana.tscn" id="9_qdrle"]
-[ext_resource type="PackedScene" uid="uid://bfo3thkf8syj0" path="res://escenas/powerUpAgua.tscn" id="10_lr52t"]
-[ext_resource type="PackedScene" uid="uid://dxneeiyx0e2gr" path="res://escenas/powerUpFuego.tscn" id="11_0xqmq"]
 [ext_resource type="Texture2D" uid="uid://4i2hyojjcg6p" path="res://assets/tiles/nubes.png" id="11_bqp80"]
+[ext_resource type="PackedScene" uid="uid://b6sis54rblu2f" path="res://escenas/nube4.tscn" id="11_cn6ni"]
 [ext_resource type="Texture2D" uid="uid://bysyovfkjmq46" path="res://assets/tiles/nubes2.png" id="12_1yo3q"]
-[ext_resource type="PackedScene" uid="uid://bdifdqss080mw" path="res://escenas/powerUpNaturaleza.tscn" id="12_7o7un"]
+[ext_resource type="PackedScene" uid="uid://3dmc61rlsyt0" path="res://escenas/nubeCae.tscn" id="12_bvt45"]
 [ext_resource type="Texture2D" uid="uid://dxw6fldf3bkh" path="res://assets/tiles/ladrillos.png" id="13_bm5n5"]
-[ext_resource type="Texture2D" uid="uid://bghgcq18dlymv" path="res://assets/tiles/transparencianb.png" id="15_wnnwi"]
+[ext_resource type="PackedScene" uid="uid://qd2cvn5wqiws" path="res://escenas/bola.tscn" id="14_a78y1"]
+[ext_resource type="Texture2D" uid="uid://df35ni2ah8ay6" path="res://assets/escenarios/fondocastillo.png" id="16_38am0"]
 [ext_resource type="Texture2D" uid="uid://c8d4fewelrmpc" path="res://assets/escenarios/nube.png" id="16_gft2x"]
 [ext_resource type="PackedScene" uid="uid://bumhuugs3iurj" path="res://escenas/arbol.tscn" id="17_v3q70"]
 [ext_resource type="PackedScene" uid="uid://byfs5bvpn43kd" path="res://escenas/powerVida.tscn" id="18_v4eoe"]
@@ -30,9 +30,125 @@
 [ext_resource type="PackedScene" uid="uid://dn7lu1h60qyna" path="res://escenas/pajaro.tscn" id="20_7weby"]
 [ext_resource type="PackedScene" uid="uid://cx7t05t4wd2ir" path="res://escenas/trepadora.tscn" id="20_d4mwd"]
 [ext_resource type="Texture2D" uid="uid://ds8m1qxpslki3" path="res://assets/escenarios/lluvia.png" id="21_4n1xk"]
+[ext_resource type="PackedScene" uid="uid://bo66sbqggx515" path="res://escenas/rayo.tscn" id="21_4wba3"]
+[ext_resource type="AudioStream" uid="uid://cn3qsi2jjcinh" path="res://assets/SONIDOS/Epic castle.mp3" id="22_aur5y"]
 [ext_resource type="PackedScene" uid="uid://bvu2i728hrfob" path="res://escenas/nube.tscn" id="23_wpsj2"]
+[ext_resource type="PackedScene" uid="uid://cqhjq35cwe5h3" path="res://escenas/pajaroInversa.tscn" id="34_ofvdx"]
+[ext_resource type="Script" path="res://Scripts/nube4.gd" id="35_0633c"]
+[ext_resource type="Texture2D" uid="uid://dclsfij0mdy4a" path="res://assets/escenarios/nubev4.png" id="35_ohwn7"]
+[ext_resource type="AudioStream" uid="uid://d16hhxqugof3t" path="res://assets/SONIDOS/gentle-rain-for-relaxation-and-sleep-337279.mp3" id="35_voj1n"]
+[ext_resource type="Script" path="res://Scripts/nubeAnimagd.gd" id="36_k77c5"]
+[ext_resource type="PackedScene" uid="uid://b77kis1hhut3w" path="res://escenas/libro.tscn" id="36_xkakr"]
+[ext_resource type="PackedScene" uid="uid://b3y5blj5i608c" path="res://escenas/mosquitoInvertido.tscn" id="37_lsbbc"]
+[ext_resource type="Texture2D" uid="uid://ciuexyhwgt62u" path="res://assets/escenarios/fondocastilloventana.png" id="41_ce766"]
+[ext_resource type="PackedScene" uid="uid://cvtc41i6h1p8w" path="res://escenas/Portal_final_N1.tscn" id="43_gsvfs"]
 
-[sub_resource type="Animation" id="Animation_sd3ay"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ixs3v"]
+texture = ExtResource("2_2eosf")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycxrs"]
+texture = ExtResource("11_bqp80")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmukf"]
+texture = ExtResource("11_bqp80")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2a3rg"]
+texture = ExtResource("12_1yo3q")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7glp3"]
+texture = ExtResource("13_bm5n5")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ke2a4"]
+texture = ExtResource("4_ohx42")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_56oc1"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ixs3v")
+sources/6 = SubResource("TileSetAtlasSource_ke2a4")
+sources/1 = SubResource("TileSetAtlasSource_ycxrs")
+sources/2 = SubResource("TileSetAtlasSource_fmukf")
+sources/3 = SubResource("TileSetAtlasSource_2a3rg")
+sources/4 = SubResource("TileSetAtlasSource_7glp3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw3u3"]
+size = Vector2(1541, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li3pa"]
+size = Vector2(950, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6afc"]
+size = Vector2(2120, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clcvq"]
+size = Vector2(2149.5, 33.25)
+
+[sub_resource type="Curve2D" id="Curve2D_m44vf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -28.1704, -27, 0, 0, 0, 0, -4.29717, -239, 0, 0, 0, 0, 31.7514, -694, 0, 0, 0, 0, 75.6781, -856, 0, 0, 0, 0, 115.069, -985, 0, 0, 0, 0, 175.946, -1201, 0, 0, 0, 0, 296.625, -1317, 0, 0, 0, 0, 325.54, -1548.38, 0, 0, 0, 0, 328.257, -1569, 0, 0, 0, 0, 344.132, -1679, 0, 0, 0, 0, 414.558, -1945, 0, 0, 0, 0, 524.375, -2197, 0, 0, 0, 0, 667.256, -2437, 0, 0, 0, 0, 680.267, -2618, 0, 0, 0, 0, 685.997, -2806, 0, 0, 0, 0, 694.83, -3012, 0, 0, 0, 0, 722.284, -3115, 0, 0, 0, 0, 973.669, -3260, 0, 0, 0, 0, 1020.46, -3335, 0, 0, 0, 0, 1335.47, -3642)
+}
+point_count = 20
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f2hib"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(800, 0, 1)
+inherit_velocity_ratio = 1.0
+gravity = Vector3(-100, 100, 100)
+scale_max = 3.0
+
+[sub_resource type="Animation" id="Animation_47wdx"]
+resource_name = "Nube4"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3416, -1358), Vector2(3416, -1645)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.36667, 3.46667, 3.56667, 3.66667, 3.76667, 3.86667, 3.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 1), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 1), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_r2h7s"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -44,134 +160,14 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1010, -776)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(3416, -1357)]
 }
 
-[sub_resource type="Animation" id="Animation_57g8q"]
-resource_name = "nube_plataforma"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(986, -776), Vector2(2114, -1224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(7.1, 7.33333, 7.56667, 7.86667, 8.13333, 8.4, 8.63333, 8.86667, 9.1, 9.4, 9.66667, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_617an"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oc3wk"]
 _data = {
-"RESET": SubResource("Animation_sd3ay"),
-"nube_plataforma": SubResource("Animation_57g8q")
+"Nube4": SubResource("Animation_47wdx"),
+"RESET": SubResource("Animation_r2h7s")
 }
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x2nd2"]
-texture = ExtResource("2_2eosf")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8tce"]
-texture = ExtResource("11_bqp80")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_phdi3"]
-texture = ExtResource("11_bqp80")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fqja2"]
-texture = ExtResource("12_1yo3q")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r645i"]
-texture = ExtResource("13_bm5n5")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yurl1"]
-texture = ExtResource("4_ohx42")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_56oc1"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_x2nd2")
-sources/6 = SubResource("TileSetAtlasSource_yurl1")
-sources/1 = SubResource("TileSetAtlasSource_w8tce")
-sources/2 = SubResource("TileSetAtlasSource_phdi3")
-sources/3 = SubResource("TileSetAtlasSource_fqja2")
-sources/4 = SubResource("TileSetAtlasSource_r645i")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw3u3"]
-size = Vector2(1541, 64)
-
-[sub_resource type="Curve2D" id="Curve2D_m44vf"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -42.0169, -72, 0, 0, 0, 0, 12.4141, -600, 0, 0, 0, 0, 41.0619, -776, 0, 0, 0, 0, 156.608, -1232)
-}
-point_count = 4
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f2hib"]
-lifetime_randomness = 1.0
-emission_shape = 3
-emission_box_extents = Vector3(800, 0, 1)
-inherit_velocity_ratio = 1.0
-gravity = Vector3(-100, 100, 100)
-scale_max = 3.0
 
 [sub_resource type="Animation" id="Animation_1yw2b"]
 length = 0.001
@@ -190,7 +186,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Nube3:position")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -222,7 +218,7 @@ length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Nube3:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -276,9 +272,206 @@ _data = {
 "nubepequeña": SubResource("Animation_qvhr5")
 }
 
+[sub_resource type="Animation" id="Animation_0koeq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ytx7d"]
+resource_name = "nube"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.644663, 0.644663, 0.644663, 1), Color(0.344076, 0.344076, 0.344076, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_smv5r"]
+_data = {
+"RESET": SubResource("Animation_0koeq"),
+"nube": SubResource("Animation_ytx7d")
+}
+
+[sub_resource type="Animation" id="Animation_80lmt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6397, -2402)]
+}
+
+[sub_resource type="Animation" id="Animation_1ajlt"]
+resource_name = "nube_plataforma4"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6397, -2402), Vector2(6471, -3152)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_322st"]
+_data = {
+"RESET": SubResource("Animation_80lmt"),
+"nube_plataforma4": SubResource("Animation_1ajlt")
+}
+
+[sub_resource type="Animation" id="Animation_sd3ay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_57g8q"]
+resource_name = "nube_plataforma"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1142, -884), Vector2(2211, -1370)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.06667, 5.3, 5.53334, 5.83334, 6.1, 6.36667, 6.6, 6.83334, 7.06667, 7.36667, 7.63334, 7.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.392157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_617an"]
+_data = {
+"RESET": SubResource("Animation_sd3ay"),
+"nube_plataforma": SubResource("Animation_57g8q")
+}
+
+[sub_resource type="Animation" id="Animation_6ta22"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_ur2q6"]
+resource_name = "nube_plataforma4"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3448, -1698), Vector2(5075, -2307)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sw5vt"]
+_data = {
+"RESET": SubResource("Animation_6ta22"),
+"nube_plataforma4": SubResource("Animation_ur2q6")
+}
+
 [node name="NIVEL1" type="Node2D"]
 position = Vector2(150, -112)
-script = ExtResource("1_ifna7")
+script = ExtResource("1_o7t78")
 
 [node name="Node2D2" parent="." instance=ExtResource("2_t2qiu")]
 
@@ -286,35 +479,30 @@ script = ExtResource("1_ifna7")
 
 [node name="Cansancio" parent="." instance=ExtResource("4_f1gki")]
 
-[node name="Cielo" type="Sprite2D" parent="."]
-modulate = Color(0.563557, 0.655711, 0.926913, 1)
-show_behind_parent = true
-position = Vector2(2590, -770)
-scale = Vector2(377.625, 119.5)
-texture = ExtResource("1_d40od")
-
-[node name="Fondo5" type="Sprite2D" parent="."]
-modulate = Color(0, 0.671528, 0.727802, 1)
-self_modulate = Color(0.783523, 0.783523, 0.783523, 1)
-position = Vector2(786, 24)
-scale = Vector2(7.25, 4.45883)
-texture = ExtResource("2_fu5vf")
-
-[node name="Fondo4" type="Sprite2D" parent="."]
-modulate = Color(0.241592, 0.793942, 0.211185, 1)
-position = Vector2(174, -56)
-scale = Vector2(11.375, 2.84375)
-texture = ExtResource("2_c336r")
-
-[node name="Fondo2" type="Sprite2D" parent="."]
+[node name="montaña1" type="Sprite2D" parent="."]
 modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(506, -40)
+position = Vector2(509, -97)
 scale = Vector2(4.93359, 3.38281)
 texture = ExtResource("2_fu5vf")
 
-[node name="Fondo3" type="Sprite2D" parent="."]
+[node name="montaña2" type="Sprite2D" parent="."]
+modulate = Color(0, 0.671528, 0.727802, 1)
+self_modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(890, -128)
+scale = Vector2(14.7344, 4.45883)
+texture = ExtResource("2_fu5vf")
+
+[node name="montaña3" type="Sprite2D" parent="."]
+modulate = Color(0.241592, 0.793942, 0.211185, 1)
+z_index = -1
+position = Vector2(169, -78)
+scale = Vector2(11.375, 2.84375)
+texture = ExtResource("2_c336r")
+
+[node name="montaña4" type="Sprite2D" parent="."]
 modulate = Color(0.459672, 0.658202, 0.368174, 1)
-position = Vector2(168.497, -11.3672)
+z_index = -1
+position = Vector2(170, -64)
 scale = Vector2(11.203, 2.39477)
 texture = ExtResource("2_fu5vf")
 
@@ -325,8 +513,8 @@ texture = ExtResource("5_qxs7v")
 
 [node name="Casa2" type="Sprite2D" parent="Casa1"]
 modulate = Color(0.650128, 0.650128, 0.650128, 1)
-position = Vector2(-52.017, -15.4979)
-scale = Vector2(1.02548, 1.01163)
+position = Vector2(-70.6208, -33.8504)
+scale = Vector2(1.60685, 1.58515)
 texture = ExtResource("5_qxs7v")
 
 [node name="Casa4" type="Sprite2D" parent="Casa1"]
@@ -337,53 +525,52 @@ texture = ExtResource("5_qxs7v")
 
 [node name="Casa8" type="Sprite2D" parent="Casa1"]
 modulate = Color(0.641934, 0.641934, 0.641934, 1)
-position = Vector2(21.3403, -3.68999)
-scale = Vector2(1.29832, 1.14173)
+position = Vector2(53.3508, -28.0439)
+scale = Vector2(2.29553, 2.01866)
 texture = ExtResource("5_qxs7v")
 
 [node name="Casa7" type="Sprite2D" parent="Casa1"]
 modulate = Color(0.737193, 0.737193, 0.737193, 1)
-position = Vector2(-90.6963, 5.90397)
-scale = Vector2(0.882228, 0.775826)
+position = Vector2(-83.3605, -5.90397)
+scale = Vector2(1.35808, 1.19429)
 texture = ExtResource("5_qxs7v")
 
 [node name="Casa5" type="Sprite2D" parent="Casa1"]
-position = Vector2(21.3403, 4.42798)
-scale = Vector2(0.863075, 0.851419)
+position = Vector2(24.8701, 0.945848)
+scale = Vector2(0.973381, 0.960236)
 texture = ExtResource("5_qxs7v")
 
 [node name="Casa3" type="Sprite2D" parent="Casa1"]
-position = Vector2(-38.6793, -5.16598)
-scale = Vector2(1.17592, 1.21655)
+position = Vector2(-15.3383, -44.2798)
+scale = Vector2(2.56035, 2.6488)
 texture = ExtResource("5_qxs7v")
 
-[node name="Node2D8" parent="." instance=ExtResource("17_v3q70")]
-modulate = Color(0.683077, 0.683077, 0.683077, 1)
-position = Vector2(67, 29)
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("5_yqjr2")
 
-[node name="Node2D9" parent="." instance=ExtResource("17_v3q70")]
-modulate = Color(0.821789, 0.821789, 0.821789, 1)
-position = Vector2(198, 29)
+[node name="Cielo" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.563557, 0.655711, 0.926913, 1)
+show_behind_parent = true
+z_index = -2
+position = Vector2(8824, -2927)
+scale = Vector2(796.531, 200.656)
+texture = ExtResource("1_d40od")
 
-[node name="Node2D10" parent="." instance=ExtResource("17_v3q70")]
-position = Vector2(129, 28)
+[node name="Cielo2" type="Sprite2D" parent="Node2D"]
+modulate = Color(0.563557, 0.655711, 0.926913, 1)
+show_behind_parent = true
+z_index = -3
+position = Vector2(8710, -3101)
+scale = Vector2(796.531, 200.656)
+texture = ExtResource("1_d40od")
 
-[node name="Node2D11" parent="." instance=ExtResource("20_d4mwd")]
+[node name="Timer" type="Timer" parent="Node2D"]
+
+[node name="Node2D" parent="Node2D" instance=ExtResource("12_bvt45")]
+position = Vector2(6193, -2785)
+
+[node name="PlantaTrepadora" parent="." instance=ExtResource("20_d4mwd")]
 position = Vector2(756, -322)
-
-[node name="Go" type="Sprite2D" parent="."]
-position = Vector2(666, -16)
-scale = Vector2(1.75, 1.75)
-texture = ExtResource("19_xjiax")
-
-[node name="Node2D15" parent="." instance=ExtResource("23_wpsj2")]
-position = Vector2(1010, -776)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D15"]
-libraries = {
-"": SubResource("AnimationLibrary_617an")
-}
-speed_scale = 0.422
 
 [node name="TilemapLayers" type="Node2D" parent="."]
 position = Vector2(270, 13)
@@ -391,41 +578,47 @@ position = Vector2(270, 13)
 [node name="Fondo" type="TileMapLayer" parent="TilemapLayers"]
 
 [node name="Entorno" type="TileMapLayer" parent="TilemapLayers"]
-tile_map_data = PackedByteArray("AAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAAQAAAAAAAAAAAAAAD5/wEABgAAAAAAAAD6/wEABgAAAAAAAAD7/wEABgAAAAAAAAD8/wEABgAAAAAAAAD9/wEABgAAAAAAAAD+/wEABgAAAAAAAAD//wEABgAAAAAAAAAAAAEABgAAAAAAAAABAAEABgAAAAAAAAACAAEABgAAAAAAAAADAAEABgAAAAAAAAAEAAEABgAAAAAAAAAFAAEABgAAAAAAAAAGAAEABgAAAAAAAAAHAAEABgAAAAAAAAAIAAEABgAAAAAAAAAJAAEABgAAAAAAAAAKAAEABgAAAAAAAAALAAEABgAAAAAAAAAMAAEABgAAAAAAAAANAAEABgAAAAAAAAAOAAEABgAAAAAAAAAPAAEABgAAAAAAAAAQAAEABgAAAAAAAAD5/wIABgAAAAAAAAD6/wIABgAAAAAAAAD7/wIABgAAAAAAAAD8/wIABgAAAAAAAAD9/wIABgAAAAAAAAD+/wIABgAAAAAAAAD//wIABgAAAAAAAAAAAAIABgAAAAAAAAABAAIABgAAAAAAAAACAAIABgAAAAAAAAADAAIABgAAAAAAAAAEAAIABgAAAAAAAAAFAAIABgAAAAAAAAAGAAIABgAAAAAAAAAHAAIABgAAAAAAAAAIAAIABgAAAAAAAAAJAAIABgAAAAAAAAAKAAIABgAAAAAAAAALAAIABgAAAAAAAAAMAAIABgAAAAAAAAANAAIABgAAAAAAAAAOAAIABgAAAAAAAAAPAAIABgAAAAAAAAAQAAIABgAAAAAAAAD4/wAAAAAAAAAAAAD4/wEABgAAAAAAAAD4/wIABgAAAAAAAAAsAO7/BAAAAAAAAAArAO7/BAAAAAAAAAAqAO7/BAAAAAAAAAApAO7/BAAAAAAAAAAoAO7/BAAAAAAAAAAnAO7/BAAAAAAAAAAmAO7/BAAAAAAAAAAlAO7/BAAAAAAAAAAkAO7/BAAAAAAAAAAjAO7/BAAAAAAAAAAiAO7/BAAAAAAAAAAhAO7/BAAAAAAAAAAgAO7/BAAAAAAAAAAfAO7/BAAAAAAAAAAeAO7/BAAAAAAAAAAdAO7/BAAAAAAAAAAcAO7/BAAAAAAAAAAbAO7/BAAAAAAAAAAaAO7/BAAAAAAAAAAdAOf/BAAAAAAAAAAdAOj/BAAAAAAAAAAdAOn/BAAAAAAAAAAdAOr/BAAAAAAAAAAdAOv/BAAAAAAAAAAdAOz/BAAAAAAAAAAdAO3/BAAAAAAAAAAeAOj/BAAAAAAAAAAfAOj/BAAAAAAAAAAfAOf/BAAAAAAAAAAgAOj/BAAAAAAAAAAhAOf/BAAAAAAAAAAhAOj/BAAAAAAAAAAiAOj/BAAAAAAAAAAjAOf/BAAAAAAAAAAjAOj/BAAAAAAAAAAkAOj/BAAAAAAAAAAlAOf/BAAAAAAAAAAlAOj/BAAAAAAAAAAlAOn/BAAAAAAAAAAlAOr/BAAAAAAAAAAlAOv/BAAAAAAAAAAlAOz/BAAAAAAAAAAlAO3/BAAAAAAAAAAkAOn/BAAAAAAAAAAkAOr/BAAAAAAAAAAkAOv/BAAAAAAAAAAkAOz/BAAAAAAAAAAkAO3/BAAAAAAAAAAjAOn/BAAAAAAAAAAjAOr/BAAAAAAAAAAjAOv/BAAAAAAAAAAjAOz/BAAAAAAAAAAjAO3/BAAAAAAAAAAiAOn/BAAAAAAAAAAiAOr/BAAAAAAAAAAiAOv/BAAAAAAAAAAiAOz/BAAAAAAAAAAiAO3/BAAAAAAAAAAhAOn/BAAAAAAAAAAhAOr/BAAAAAAAAAAhAOv/BAAAAAAAAAAhAOz/BAAAAAAAAAAhAO3/BAAAAAAAAAAgAOn/BAAAAAAAAAAgAOr/BAAAAAAAAAAgAOv/BAAAAAAAAAAgAOz/BAAAAAAAAAAgAO3/BAAAAAAAAAAfAOn/BAAAAAAAAAAfAOr/BAAAAAAAAAAfAOv/BAAAAAAAAAAfAOz/BAAAAAAAAAAfAO3/BAAAAAAAAAAeAOn/BAAAAAAAAAAeAOr/BAAAAAAAAAAeAOv/BAAAAAAAAAAeAOz/BAAAAAAAAAAeAO3/BAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAAQAAAAAAAAAAAAAAD5/wEABgAAAAAAAAD6/wEABgAAAAAAAAD7/wEABgAAAAAAAAD8/wEABgAAAAAAAAD9/wEABgAAAAAAAAD+/wEABgAAAAAAAAD//wEABgAAAAAAAAAAAAEABgAAAAAAAAABAAEABgAAAAAAAAACAAEABgAAAAAAAAADAAEABgAAAAAAAAAEAAEABgAAAAAAAAAFAAEABgAAAAAAAAAGAAEABgAAAAAAAAAHAAEABgAAAAAAAAAIAAEABgAAAAAAAAAJAAEABgAAAAAAAAAKAAEABgAAAAAAAAALAAEABgAAAAAAAAAMAAEABgAAAAAAAAANAAEABgAAAAAAAAAOAAEABgAAAAAAAAAPAAEABgAAAAAAAAAQAAEABgAAAAAAAAD5/wIABgAAAAAAAAD6/wIABgAAAAAAAAD7/wIABgAAAAAAAAD8/wIABgAAAAAAAAD9/wIABgAAAAAAAAD+/wIABgAAAAAAAAD//wIABgAAAAAAAAAAAAIABgAAAAAAAAABAAIABgAAAAAAAAACAAIABgAAAAAAAAADAAIABgAAAAAAAAAEAAIABgAAAAAAAAAFAAIABgAAAAAAAAAGAAIABgAAAAAAAAAHAAIABgAAAAAAAAAIAAIABgAAAAAAAAAJAAIABgAAAAAAAAAKAAIABgAAAAAAAAALAAIABgAAAAAAAAAMAAIABgAAAAAAAAANAAIABgAAAAAAAAAOAAIABgAAAAAAAAAPAAIABgAAAAAAAAAQAAIABgAAAAAAAAD4/wAAAAAAAAAAAAD4/wEABgAAAAAAAAD4/wIABgAAAAAAAAAeAOf/AwAAAAAAAAAoAOf/AwAAAAAAAAD4/wMABgAAAAAAAAD5/wMABgAAAAAAAAD6/wMABgAAAAAAAAD7/wMABgAAAAAAAAD8/wMABgAAAAAAAAD9/wMABgAAAAAAAAD+/wMABgAAAAAAAAD//wMABgAAAAAAAAAAAAMABgAAAAAAAAABAAMABgAAAAAAAAACAAMABgAAAAAAAAADAAMABgAAAAAAAAAEAAMABgAAAAAAAAAFAAMABgAAAAAAAAAGAAMABgAAAAAAAAAHAAMABgAAAAAAAAAIAAMABgAAAAAAAAAJAAMABgAAAAAAAAAKAAMABgAAAAAAAAAQAAMABgAAAAAAAAAPAAMABgAAAAAAAAAOAAMABgAAAAAAAAANAAMABgAAAAAAAAAMAAMABgAAAAAAAAALAAMABgAAAAAAAAAQAAQABgAAAAAAAAAPAAQABgAAAAAAAAAOAAQABgAAAAAAAAANAAQABgAAAAAAAAAMAAQABgAAAAAAAAALAAQABgAAAAAAAAAKAAQABgAAAAAAAAAJAAQABgAAAAAAAAAIAAQABgAAAAAAAAAHAAQABgAAAAAAAAAGAAQABgAAAAAAAAAFAAQABgAAAAAAAAAEAAQABgAAAAAAAAADAAQABgAAAAAAAAACAAQABgAAAAAAAAABAAQABgAAAAAAAAAAAAQABgAAAAAAAAD//wQABgAAAAAAAAD+/wQABgAAAAAAAAD4/wQABgAAAAAAAAD5/wQABgAAAAAAAAD6/wQABgAAAAAAAAD7/wQABgAAAAAAAAD8/wQABgAAAAAAAAD9/wQABgAAAAAAAAA=")
 tile_set = SubResource("TileSet_56oc1")
 
 [node name="Suelo" type="StaticBody2D" parent="TilemapLayers/Entorno"]
+z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
 position = Vector2(264, 31)
 shape = SubResource("RectangleShape2D_qw3u3")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
-position = Vector2(2434.5, -1120)
-shape = SubResource("RectangleShape2D_qw3u3")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+position = Vector2(2395, -1260.5)
+shape = SubResource("RectangleShape2D_li3pa")
+debug_color = Color(0.924775, 4.42803e-05, 0.678753, 0.42)
 
-[node name="Transparencianb" type="Sprite2D" parent="TilemapLayers/Entorno/Suelo"]
-position = Vector2(2272.5, -1107)
-scale = Vector2(19.0469, 1.92188)
-texture = ExtResource("15_wnnwi")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+z_index = 1
+position = Vector2(7288, -3107)
+shape = SubResource("RectangleShape2D_k6afc")
+debug_color = Color(0.909335, 0.265106, 0.360163, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TilemapLayers/Entorno/Suelo"]
+z_index = 1
+position = Vector2(10243.3, -3477)
+shape = SubResource("RectangleShape2D_clcvq")
+debug_color = Color(0.89237, 0.147023, 0.704134, 0.42)
 
 [node name="Player_Idle" parent="." instance=ExtResource("1_e1sbd")]
-position = Vector2(146, -8)
-metadata/_edit_group_ = true
+z_index = 1
+position = Vector2(5, -13)
 
-[node name="Vidas" parent="Player_Idle" instance=ExtResource("3_nh1pu")]
-
-[node name="Proyectil1" parent="." instance=ExtResource("4_ko24r")]
-position = Vector2(-98, -14)
+[node name="Vidas" parent="Player_Idle" groups=["Vidas"] instance=ExtResource("3_nh1pu")]
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(770, -48)
+position = Vector2(613, -39)
 scale = Vector2(8.37759, 1)
 curve = SubResource("Curve2D_m44vf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-42.0169, -72)
-rotation = -1.46807
+position = Vector2(-28.1704, -27)
+rotation = -1.45866
 cubic_interp = false
 loop = false
 script = ExtResource("3_amyhw")
@@ -441,101 +634,762 @@ amount = 4500
 process_material = SubResource("ParticleProcessMaterial_f2hib")
 texture = ExtResource("21_4n1xk")
 lifetime = 11.44
+preprocess = 2.0
 speed_scale = 6.49
 fixed_fps = 60
 draw_order = 0
 trail_lifetime = 0.01
 
-[node name="Mosquito" parent="." instance=ExtResource("8_5pi6u")]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_aur5y")
+volume_db = 6.209
+autoplay = true
+max_distance = 90000.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("35_voj1n")
+volume_db = 16.04
+autoplay = true
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("43_gsvfs")]
+z_index = 0
+position = Vector2(10982, -3601)
+
+[node name="POWERVIDA" type="Node" parent="."]
+
+[node name="Pocion1" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(762, -85)
+
+[node name="Pocion2" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(992, -681)
+
+[node name="Pocion3" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(1828, -1048)
+
+[node name="Node2D29" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(6643, -2880)
+
+[node name="Node2D" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+z_index = 1
+position = Vector2(2829, -1354)
+
+[node name="Node2D10" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(4480, -1995)
+
+[node name="Node2D11" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(5057, -2257)
+
+[node name="Node2D72" parent="POWERVIDA" instance=ExtResource("14_a78y1")]
+z_index = 2
+position = Vector2(6910, -3314)
+
+[node name="Node2D76" parent="POWERVIDA" instance=ExtResource("14_a78y1")]
+z_index = 2
+position = Vector2(7923, -3294)
+
+[node name="Node2D77" parent="POWERVIDA" instance=ExtResource("14_a78y1")]
+z_index = 2
+position = Vector2(8599, -3314)
+
+[node name="Node2D12" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(5534, -2410)
+
+[node name="Node2D15" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(6258, -2636)
+
+[node name="Node2D16" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(3443, -1721)
+
+[node name="Node2D18" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(3894, -2146)
+
+[node name="Node2D83" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+z_index = 1
+position = Vector2(7147, -3197)
+
+[node name="Node2D84" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+z_index = 1
+position = Vector2(8312, -3195)
+
+[node name="Node2D88" parent="POWERVIDA" instance=ExtResource("18_v4eoe")]
+position = Vector2(9246, -3434)
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="Node2D18" parent="Enemigos" instance=ExtResource("37_lsbbc")]
+position = Vector2(203, -281)
+
+[node name="Mosquito" parent="Enemigos" instance=ExtResource("8_5pi6u")]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
-position = Vector2(1482, -40)
+position = Vector2(1632, -152)
 
-[node name="Mosquito2" parent="." instance=ExtResource("8_5pi6u")]
+[node name="Mosquito2" parent="Enemigos" instance=ExtResource("8_5pi6u")]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
-position = Vector2(3938, -1008)
+position = Vector2(8348, -1383)
 
-[node name="Mosquito3" parent="." instance=ExtResource("8_5pi6u")]
+[node name="Mosquito3" parent="Enemigos" instance=ExtResource("8_5pi6u")]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
-position = Vector2(3906, -936)
+position = Vector2(7887, -1439)
 
-[node name="Mosquito4" parent="." instance=ExtResource("8_5pi6u")]
+[node name="Mosquito4" parent="Enemigos" instance=ExtResource("8_5pi6u")]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
-position = Vector2(3810, -992)
+position = Vector2(8349, -1516)
 
-[node name="Node2D3" parent="." instance=ExtResource("9_qdrle")]
-position = Vector2(858, -807)
+[node name="pajaro1" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(1968, -464)
 
-[node name="Node2D5" parent="." instance=ExtResource("10_lr52t")]
-position = Vector2(834, -62)
+[node name="pajaro4" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(8134, -1438)
 
-[node name="PowerUpFuego" parent="." instance=ExtResource("11_0xqmq")]
-position = Vector2(693, -245)
+[node name="pajaro5" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(8066, -1438)
 
-[node name="Node2D7" parent="." instance=ExtResource("12_7o7un")]
-position = Vector2(724, -443)
+[node name="pajaro6" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(8202, -1437)
 
-[node name="Node2D4" parent="." instance=ExtResource("9_qdrle")]
-position = Vector2(564, -40)
+[node name="pajaro7" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(8003, -1438)
 
-[node name="Nube2" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.662745)
-position = Vector2(864, -365)
-scale = Vector2(1.50977, 1.50977)
-texture = ExtResource("16_gft2x")
+[node name="pajaro2" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(2072, -552)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Nube2"]
+[node name="pajaro3" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(2176, -608)
+
+[node name="Node2D27" parent="Enemigos" instance=ExtResource("9_qdrle")]
+position = Vector2(5410, -2478)
+
+[node name="Node2D12" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-813, -550)
+
+[node name="Node2D13" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1281, -648)
+
+[node name="Node2D14" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1063, -682)
+
+[node name="Node2D16" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1112, -537)
+
+[node name="Node2D17" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1470, -796)
+
+[node name="Node2D3" parent="Enemigos" instance=ExtResource("9_qdrle")]
+position = Vector2(988, -941)
+
+[node name="Node2D4" parent="Enemigos" instance=ExtResource("9_qdrle")]
+position = Vector2(729, -156)
+
+[node name="Node2D2" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 1
+position = Vector2(2533, -1433)
+
+[node name="Node2D5" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 1
+position = Vector2(3096, -1433)
+
+[node name="Node2D6" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 1
+position = Vector2(891, -698)
+
+[node name="Node2D7" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1731, -1110)
+
+[node name="Node2D8" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1909, -1195)
+
+[node name="Node2D9" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-2091, -1131)
+
+[node name="Node2D10" parent="Enemigos" instance=ExtResource("9_qdrle")]
+position = Vector2(5673, -2474)
+
+[node name="Node2D15" parent="Enemigos" instance=ExtResource("9_qdrle")]
+position = Vector2(5798, -2479)
+
+[node name="Node2D19" parent="Enemigos" instance=ExtResource("9_qdrle")]
+position = Vector2(6049, -2588)
+
+[node name="Node2D20" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9542, -1831)
+
+[node name="Node2D21" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9609, -1832)
+
+[node name="Node2D22" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9680, -1832)
+
+[node name="Node2D23" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9633, -1781)
+
+[node name="Node2D26" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9509, -1881)
+
+[node name="Node2D28" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9706, -1778)
+
+[node name="Node2D29" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9471, -1818)
+
+[node name="Node2D30" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9503, -1766)
+
+[node name="Node2D31" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9437, -1878)
+
+[node name="Node2D32" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9473, -1947)
+
+[node name="Node2D33" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9560, -1948)
+
+[node name="Node2D34" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10770, -1937)
+
+[node name="Node2D35" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10726, -1890)
+
+[node name="Node2D36" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10793, -1887)
+
+[node name="Node2D37" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10833, -1936)
+
+[node name="Node2D38" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10829, -1999)
+
+[node name="Node2D39" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10898, -2007)
+
+[node name="Node2D41" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10890, -1916)
+
+[node name="Node2D42" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10857, -1869)
+
+[node name="Node2D43" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10977, -2009)
+
+[node name="Node2D44" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10943, -2052)
+
+[node name="Node2D45" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10990, -1945)
+
+[node name="Node2D46" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10952, -1901)
+
+[node name="Node2D47" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(11011, -1888)
+
+[node name="Node2D48" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10924, -1856)
+
+[node name="Node2D49" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(11065, -1982)
+
+[node name="Node2D50" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(11040, -2015)
+
+[node name="Node2D40" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(10931, -1958)
+
+[node name="Node2D51" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9642, -1949)
+
+[node name="Node2D24" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9561, -1779)
+
+[node name="Node2D25" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9579, -1886)
+
+[node name="Node2D52" parent="Enemigos" instance=ExtResource("20_7weby")]
+position = Vector2(9650, -1883)
+
+[node name="Node2D53" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-2027, -2161)
+
+[node name="Node2D54" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-2001, -2101)
+
+[node name="Node2D55" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-2079, -2095)
+
+[node name="Node2D56" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1948, -2143)
+
+[node name="Node2D57" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1968, -2197)
+
+[node name="Node2D58" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1907, -2177)
+
+[node name="Node2D59" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1910, -2221)
+
+[node name="Node2D60" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1878, -2124)
+
+[node name="Node2D61" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1846, -2185)
+
+[node name="Node2D62" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1821, -2135)
+
+[node name="Node2D63" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1928, -2081)
+
+[node name="Node2D64" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1853, -2071)
+
+[node name="Node2D65" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1789, -2079)
+
+[node name="Node2D66" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1761, -2124)
+
+[node name="Node2D67" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1777, -2179)
+
+[node name="Node2D68" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1814, -2233)
+
+[node name="Node2D69" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1875, -2253)
+
+[node name="Node2D70" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-2030, -2220)
+
+[node name="Node2D71" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-1974, -2250)
+
+[node name="Node2D72" parent="Enemigos" instance=ExtResource("34_ofvdx")]
+position = Vector2(-2092, -2154)
+
+[node name="Node2D78" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 1
+position = Vector2(7335, -3261)
+
+[node name="Node2D79" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 1
+position = Vector2(7659, -3262)
+
+[node name="Node2D80" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 1
+position = Vector2(8166, -3263)
+
+[node name="Node2D81" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 1
+position = Vector2(8743, -3262)
+
+[node name="Node2D73" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 2
+position = Vector2(9920, -3646)
+
+[node name="Node2D74" parent="Enemigos" instance=ExtResource("9_qdrle")]
+z_index = 2
+position = Vector2(10532, -3647)
+
+[node name="Node2D11" parent="Enemigos" instance=ExtResource("21_4wba3")]
+position = Vector2(2688, -1476)
+
+[node name="Node2D75" parent="Enemigos" instance=ExtResource("21_4wba3")]
+position = Vector2(2945, -1476)
+
+[node name="Node2D76" parent="Enemigos" instance=ExtResource("21_4wba3")]
+position = Vector2(2430, -1475)
+
+[node name="Node2D" parent="Enemigos" instance=ExtResource("21_4wba3")]
+position = Vector2(3200, -1476)
+
+[node name="LIBROS" type="Node" parent="."]
+
+[node name="Libro" parent="LIBROS" instance=ExtResource("36_xkakr")]
+position = Vector2(1104, -163)
+
+[node name="Libro2" parent="LIBROS" instance=ExtResource("36_xkakr")]
+position = Vector2(884, -964)
+
+[node name="Libro3" parent="LIBROS" instance=ExtResource("36_xkakr")]
+position = Vector2(7517, -3297)
+
+[node name="Decoracion" type="Node" parent="."]
+
+[node name="Fondocastilloventana" type="Sprite2D" parent="Decoracion"]
+position = Vector2(7197, -4134.5)
+scale = Vector2(1, 0.997222)
+texture = ExtResource("41_ce766")
+
+[node name="Fondocastilloventana2" type="Sprite2D" parent="Decoracion"]
+z_index = -1
+position = Vector2(9107, -4134)
+scale = Vector2(1, 0.997222)
+texture = ExtResource("41_ce766")
+
+[node name="Go" type="Sprite2D" parent="Decoracion"]
+position = Vector2(816, -128)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("19_xjiax")
+
+[node name="Fondocastillo" type="Sprite2D" parent="Decoracion"]
+z_index = -1
+position = Vector2(10065, -4134)
+texture = ExtResource("16_38am0")
+
+[node name="Fondocastillo2" type="Sprite2D" parent="Decoracion"]
+z_index = -1
+position = Vector2(11019, -4134)
+texture = ExtResource("16_38am0")
+
+[node name="Node2D8" parent="Decoracion" instance=ExtResource("17_v3q70")]
+modulate = Color(0.683077, 0.683077, 0.683077, 1)
+z_index = -1
+position = Vector2(217, -83)
+
+[node name="Node2D9" parent="Decoracion" instance=ExtResource("17_v3q70")]
+modulate = Color(0.821789, 0.821789, 0.821789, 1)
+z_index = -1
+position = Vector2(348, -83)
+
+[node name="Node2D10" parent="Decoracion" instance=ExtResource("17_v3q70")]
+z_index = -1
+position = Vector2(279, -84)
+
+[node name="Fondocastillo3" type="Sprite2D" parent="Decoracion"]
+position = Vector2(8157, -4137)
+texture = ExtResource("16_38am0")
+
+[node name="Nubes" type="Node" parent="."]
+
+[node name="Nubev11" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+z_index = 1
+position = Vector2(6887, -3507)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev12" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+z_index = 1
+position = Vector2(7894, -3479)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev13" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+z_index = 1
+position = Vector2(7202, -3506)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev14" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+z_index = 1
+position = Vector2(7604, -3500)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev15" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+z_index = 1
+position = Vector2(8222, -3504)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev16" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+z_index = 1
+position = Vector2(8569, -3498)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev28" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.733005, 0.733005, 0.733005, 1)
+z_index = 1
+position = Vector2(8974, -3591)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev30" type="Sprite2D" parent="Nubes"]
+z_index = -1
+position = Vector2(9825, -3499)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev31" type="Sprite2D" parent="Nubes"]
+z_index = -1
+position = Vector2(10090, -3494)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev34" type="Sprite2D" parent="Nubes"]
+z_index = -1
+position = Vector2(11515, -3514)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev35" type="Sprite2D" parent="Nubes"]
+z_index = -1
+position = Vector2(11080, -3506)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev32" type="Sprite2D" parent="Nubes"]
+z_index = -1
+position = Vector2(10262, -3487)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev33" type="Sprite2D" parent="Nubes"]
+z_index = -1
+position = Vector2(10631, -3508)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nube4" parent="Nubes" instance=ExtResource("23_wpsj2")]
+z_index = -1
+position = Vector2(3416, -1357)
+script = ExtResource("35_0633c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Nube4"]
 libraries = {
-"": SubResource("AnimationLibrary_cpfih")
+"": SubResource("AnimationLibrary_oc3wk")
 }
-autoplay = "nube"
-speed_scale = 0.063
 
-[node name="Nube3" type="Sprite2D" parent="."]
+[node name="Nube2" type="Sprite2D" parent="Nubes"]
 self_modulate = Color(1, 1, 1, 0.662745)
 position = Vector2(4058, -896)
 scale = Vector2(1.50977, 1.50977)
 texture = ExtResource("16_gft2x")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Nube3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Nube2"]
 libraries = {
 "": SubResource("AnimationLibrary_cpfih")
 }
 autoplay = "nube"
 speed_scale = 0.063
 
-[node name="Nube" type="Sprite2D" parent="."]
+[node name="Nube3" type="Sprite2D" parent="Nubes"]
+self_modulate = Color(1, 1, 1, 0.662745)
+position = Vector2(4058, -896)
+scale = Vector2(1.50977, 1.50977)
+texture = ExtResource("16_gft2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Nube3"]
+libraries = {
+"": SubResource("AnimationLibrary_cpfih")
+}
+autoplay = "nube"
+speed_scale = 0.063
+
+[node name="Nube" type="Sprite2D" parent="Nubes"]
 modulate = Color(1, 1, 1, 0.478431)
 position = Vector2(332, -318)
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("16_gft2x")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Nube"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Nube"]
 libraries = {
 "": SubResource("AnimationLibrary_pl8lr")
 }
 autoplay = "nubepequeña"
 speed_scale = 0.073
 
-[node name="Node2D6" parent="." instance=ExtResource("18_v4eoe")]
-position = Vector2(713, -812)
+[node name="Nubev5" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.980392)
+z_index = -1
+position = Vector2(2573, -1264)
+texture = ExtResource("35_ohwn7")
 
-[node name="pajaro1" parent="." instance=ExtResource("20_7weby")]
-position = Vector2(1818, -352)
+[node name="Nubev6" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.980392)
+z_index = -1
+position = Vector2(2890, -1273)
+texture = ExtResource("35_ohwn7")
+flip_v = true
 
-[node name="pajaro4" parent="." instance=ExtResource("20_7weby")]
-position = Vector2(4506, -928)
+[node name="Nubev7" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.980392)
+z_index = -1
+position = Vector2(3061, -1261)
+texture = ExtResource("35_ohwn7")
+flip_h = true
 
-[node name="pajaro5" parent="." instance=ExtResource("20_7weby")]
-position = Vector2(4570, -968)
+[node name="Nubev8" type="Sprite2D" parent="Nubes"]
+position = Vector2(2480, -1672)
+texture = ExtResource("35_ohwn7")
+flip_v = true
+script = ExtResource("36_k77c5")
 
-[node name="pajaro6" parent="." instance=ExtResource("20_7weby")]
-position = Vector2(4626, -928)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Nubev8"]
+libraries = {
+"": SubResource("AnimationLibrary_smv5r")
+}
 
-[node name="pajaro7" parent="." instance=ExtResource("20_7weby")]
-position = Vector2(4682, -976)
+[node name="Nubev9" type="Sprite2D" parent="Nubes"]
+position = Vector2(2760, -1665)
+texture = ExtResource("35_ohwn7")
+flip_v = true
+script = ExtResource("36_k77c5")
 
-[node name="pajaro2" parent="." instance=ExtResource("20_7weby")]
-position = Vector2(1922, -440)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Nubev9"]
+libraries = {
+"": SubResource("AnimationLibrary_smv5r")
+}
 
-[node name="pajaro3" parent="." instance=ExtResource("20_7weby")]
-position = Vector2(2026, -496)
+[node name="Nubev10" type="Sprite2D" parent="Nubes"]
+position = Vector2(3129, -1676)
+rotation = -0.0785398
+texture = ExtResource("35_ohwn7")
+flip_v = true
+script = ExtResource("36_k77c5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Nubev10"]
+libraries = {
+"": SubResource("AnimationLibrary_smv5r")
+}
+
+[node name="Node2D19" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(5407, -2400)
+
+[node name="Node2D20" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(5537, -2399)
+
+[node name="Node2D21" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(5669, -2397)
+
+[node name="Node2D22" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(5795, -2398)
+
+[node name="Node2D23" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(5923, -2450)
+
+[node name="Node2D24" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(6046, -2504)
+
+[node name="Node2D25" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(6156, -2559)
+
+[node name="Node2D26" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(6261, -2627)
+
+[node name="Nubev17" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = -1
+position = Vector2(6908, -3137)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev18" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = -1
+position = Vector2(7198, -3129)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev23" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.76662, 0.76662, 0.76662, 1)
+position = Vector2(7036, -3042)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev24" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.76662, 0.76662, 0.76662, 1)
+position = Vector2(7523, -2990)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev19" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = -1
+position = Vector2(7497, -3119)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev20" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = -1
+position = Vector2(7845, -3118)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev25" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.76662, 0.76662, 0.76662, 1)
+position = Vector2(7912, -2996)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev21" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = -1
+position = Vector2(8210, -3120)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev26" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.76662, 0.76662, 0.76662, 1)
+z_index = -1
+position = Vector2(8289, -3094)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev22" type="Sprite2D" parent="Nubes"]
+modulate = Color(1, 1, 1, 0.960784)
+z_index = -1
+position = Vector2(8544, -3146)
+texture = ExtResource("35_ohwn7")
+
+[node name="Nubev27" type="Sprite2D" parent="Nubes"]
+modulate = Color(0.76662, 0.76662, 0.76662, 1)
+position = Vector2(8619, -3006)
+texture = ExtResource("35_ohwn7")
+
+[node name="Node2D28" parent="Nubes" instance=ExtResource("11_cn6ni")]
+z_index = -1
+position = Vector2(6397, -2402)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Node2D28"]
+libraries = {
+"": SubResource("AnimationLibrary_322st")
+}
+speed_scale = 0.16
+
+[node name="Node2D31" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(1832, -1040)
+
+[node name="Node2D33" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(6647, -2867)
+
+[node name="Node2D30" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(8866, -3232)
+
+[node name="Node2D32" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(8993, -3295)
+
+[node name="Node2D34" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(9120, -3360)
+
+[node name="Node2D35" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(9250, -3423)
+
+[node name="Node2D36" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(9375, -3489)
+
+[node name="Node2D37" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(9506, -3550)
+
+[node name="Node2D15" parent="Nubes" instance=ExtResource("23_wpsj2")]
+z_index = -1
+position = Vector2(1142, -884)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Node2D15"]
+libraries = {
+"": SubResource("AnimationLibrary_617an")
+}
+speed_scale = 0.422
+
+[node name="Node2D71" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(3896, -2135)
+
+[node name="Node2D73" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(4484, -1986)
+
+[node name="Node2D75" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(5060, -2247)
+
+[node name="Node2D" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(6346, -2962)
+
+[node name="Libro" parent="Nubes" instance=ExtResource("36_xkakr")]
+position = Vector2(6342, -3034)
+
+[node name="Node2D8" parent="Nubes" instance=ExtResource("11_cn6ni")]
+z_index = -1
+position = Vector2(3448, -1698)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nubes/Node2D8"]
+libraries = {
+"": SubResource("AnimationLibrary_sw5vt")
+}
+speed_scale = 0.29
+
+[node name="Node2D2" parent="Nubes" instance=ExtResource("12_bvt45")]
+position = Vector2(5259, -2360)

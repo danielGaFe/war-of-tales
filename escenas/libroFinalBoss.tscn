@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://db3xsyogqik2m"]
+
+[ext_resource type="Script" path="res://Scripts/libroFinalBoss.gd" id="1_gjk0o"]
+[ext_resource type="Texture2D" uid="uid://cpjycl6mjxrun" path="res://assets/sprites/items/next_story.png" id="2_ao0pf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i41tq"]
+atlas = ExtResource("2_ao0pf")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3wlj"]
+atlas = ExtResource("2_ao0pf")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbh6a"]
+atlas = ExtResource("2_ao0pf")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7co8r"]
+atlas = ExtResource("2_ao0pf")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpodj"]
+atlas = ExtResource("2_ao0pf")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq2b5"]
+atlas = ExtResource("2_ao0pf")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvjbu"]
+atlas = ExtResource("2_ao0pf")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gw6je"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i41tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3wlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbh6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7co8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpodj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq2b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvjbu")
+}],
+"loop": true,
+"name": &"finalBoss",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umdjr"]
+radius = 6.80074
+
+[node name="CharacterBody2D" type="Area2D"]
+script = ExtResource("1_gjk0o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.741176)
+sprite_frames = SubResource("SpriteFrames_gw6je")
+animation = &"finalBoss"
+frame_progress = 0.891339
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("CircleShape2D_umdjr")

@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b15ycpeeiei8f"]
+[gd_scene load_steps=4 format=3 uid="uid://b15ycpeeiei8f"]
 
 [ext_resource type="Script" path="res://Scripts/marcadorPuntos.gd" id="1_i32qj"]
 [ext_resource type="FontFile" uid="uid://dob7ob11ornpn" path="res://assets/fuente/SchoolBookNew-Regular.ttf" id="2_3fffi"]
+[ext_resource type="AudioStream" uid="uid://chqky4wpht507" path="res://assets/SONIDOS/correct-2-46134.mp3" id="3_3aks8"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_i32qj")
 
-[node name="Label" type="Label" parent="."]
+[node name="Puntos" type="Label" parent="."]
 top_level = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,3 +26,7 @@ text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 3
 text_overrun_behavior = 2
+
+[node name="vidanueva" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3aks8")
+volume_db = 22.762
